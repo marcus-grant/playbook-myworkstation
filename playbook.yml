@@ -5,3 +5,4 @@
   roles:
     - marcus-grant.bootstrap-ansible-arch
     - marcus-grant.mydotfiles
+    - { name: roles/my-common-packages, become: yes }

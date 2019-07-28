@@ -55,3 +55,6 @@ dotfiles:
     version: 'master'
     links:
       - { dest: '~/.config/i3', src: '~/.dots/i3' }
+
+### my-common-packages vars
+# not shown it's too long and should be changed fairly rarely

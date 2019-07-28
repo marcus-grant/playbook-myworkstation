@@ -4,7 +4,8 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] Common role for common package installs
+- [ ] Separate task for installing a list of shell packages will be specific to host/group
+- [ ] Separate task for installing a list of gui packages will be specific to host/group
 - [ ] Install all the fonts you want both from regular package mgr and from nerd fonts
 - [ ] Ensure tree is in the cli apps role
 - [ ] cli apps role (includes fzf, ripgrep and fd) and a variable set of apps
@@ -16,6 +17,7 @@ Planning
     - look at pop_OS for their font settings
 - [ ] flatpak role to install flatpak and a variable set of apps
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
+- [ ] Setup play/run/inventory for local system
 
 Future
 ------
@@ -30,10 +32,12 @@ Future
 - [ ] Timeshift task/role or some other rsync snapshotting utility for backups
     - This includes setting up pacman hooks & crond timetables
 - [ ] ssh-hardening role (there's one that exists, investigate)
+- [ ] git split out `my-common-packages` into its own role repo?
 
 Completed
 ---------
 
+- [x] Common role for common package installs
 - [x] Get vault working
 - [x] Update prepare.yml to stop automatic suspend on VM
 - [x] Get marcus-grant.arch-bootstrap role to work
