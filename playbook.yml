@@ -2,10 +2,6 @@
 - hosts: all
   gather_facts: yes
   tasks:
-    - debug:
-        msg: 'test-workstation.test_var: {{ test_var }}'
-    # - name: test provisioner works
-    #   debug:
-    #     msg: '$HOME = {{ ansible_env.HOME }}'
   roles:
-    # - marcus-grant.bootstrap-ansible-arch
+    - marcus-grant.bootstrap-ansible-arch
+    - marcus-grant.mydotfiles

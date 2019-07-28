@@ -1,3 +1,57 @@
 ---
-# vars for all test instances created by Vagrantfile
-test_var: foobar
+# This variables file will include all available role variables.
+# It makes it easier to know what's available to change.
+# arch bootstrap variables
+arch_bootstrap_upgrade_pkgs: false
+arch__bootstrap_install_ansible_aur_mod: true
+arch_bootstrap_aur_mod_vers: v0.23
+aur_use_helper: true
+aur_helper: yay
+
+# defaults file for mydotfiles
+# dotfiles root directory, where all seperate dotfiles subdirectories go
+dotfiles_local_root_dir: '~/.dots'
+dotfiles_git_server_base_url: 'github.com'
+dotfiles_git_username: 'marcus-grant'
+dotfiles_use_ssh: true
+dotfiles:
+  bash:
+    repo_name: 'dots-bash'
+    local_subdir_name: 'bash'
+    version: 'master'
+    links:
+      - { dest: '~/.bashrc', src: '~/.dots/bash/bashrc' }
+      - { dest: '~/.profile', src: '~/.dots/bash/profile' }
+      - { dest: '~/.bash_profile', src: '~/.dots/bash/bash_profile' }
+  vim:
+    repo_name: 'dots-vim'
+    local_subdir_name: 'vim'
+    version: 'master'
+    links:
+      - { dest: '~/.vim', src: '~/.dots/vim' }
+      - { dest: '~/.vimrc', src: '~/.dots/vim/vimrc' }
+  neovim:
+    repo_name: 'dots-neovim'
+    local_subdir_name: 'neovim'
+    version: 'master'
+    links:
+      - { dest: '~/.config/nvim', src: '~/.dots/neovim' }
+  tmux:
+    repo_name: 'dots-tmux'
+    local_subdir_name: 'tmux'
+    version: 'master'
+    links:
+      - { dest: '~/.tmux.conf', src: '~/.dots/tmux/.tmux.conf' }
+      - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
+  alacritty:
+    repo_name: 'dots-alacritty'
+    local_subdir_name: 'alacritty'
+    version: 'master'
+    links:
+      - { dest: '~/.config/alacritty', src: '~/.dots/alacritty' }
+  i3:
+    repo_name: 'dots-i3'
+    local_subdir_name: 'i3'
+    version: 'master'
+    links:
+      - { dest: '~/.config/i3', src: '~/.dots/i3' }

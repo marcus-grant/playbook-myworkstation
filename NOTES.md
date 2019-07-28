@@ -78,6 +78,8 @@ References
 
 1. [Ansible Docs: Vagrant Guide][01]
 2. [Vagrant Docs: Common Ansible Options][02]
+3. [Some ideas at kewlfft/ansible-desktop][03]
 
 [01]: https://docs.ansible.com/ansible/latest/scenario_guides/guide_vagrant.html "Ansible Docs: Vagrant Guide"
 [02]: https://www.vagrantup.com/docs/provisioning/ansible_common.html#host_vars "Vagrant Docs: Common Ansible Options"
+[03]: https://github.com/cdown/ansible-desktop "Some ideas at kewlfft/ansible-desktop"
