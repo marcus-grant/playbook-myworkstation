@@ -1,0 +1,14 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Install python for ansible
+      raw: test -e /usr/bin/python || (pacman --noconfirm -S python)
+      become: true
+      changed_when: no
+    - name: Upgrade packages
+      become: true
+      pacman:
+        update_cache: yes
+        upgrade: yes

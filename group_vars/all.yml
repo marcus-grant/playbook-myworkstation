@@ -1,0 +1,3 @@
+---
+# vars for all test instances created by Vagrantfile
+test_var: foobar

@@ -1,0 +1,7 @@
+---
+- name: marcus-grant.bootstrap-ansible-arch
+  src: https://github.com/marcus-grant/role-bootstrap-ansible-arch
+  version: master
+- name: marcus-grant.mydotfiles
+  src: https://github.com/marcus-grant/role-mydotfiles
+  version: master
