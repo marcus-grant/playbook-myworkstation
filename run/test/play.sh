@@ -42,29 +42,3 @@ cmdStr="$cmdStr -u $pBookUser"
 cmdStr="$cmdStr -i $invent"
 cmdStr="$cmdStr $pBook"
 eval $cmdStr
-
-# ansible-playbook --private-key=.vagrant/machines/default/virtualbox/private_key \
-# -u vagrant \
-# -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory \
-# playbook.yml
-
-
-# cmdStr="ansible-playbook"
-# cmdStr="$cmdStr --private-key=$privateKey"
-# cmdStr="$cmdStr --user=$pBookUser"
-# cmdStr="$cmdStr --connection=ssh"
-# cmdStr="$cmdStr --limit='machine1'"
-# cmdStr="$cmdStr --inventory-file=$invent"
-# cmdStr="$cmdStr $pBook"
-# eval $cmdStr
-
-# ansible-playbook \
-# --private-key=$privateKey \
-# --user=$pBookUser \
-# --connection=ssh \
-# --limit='machine1' \
-# #--inventory-file="$projectDir/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory playbook.yml" \
-# # --inventory-file=$projectDir/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory \
-# --inventory=$invent \
-# $pBook
-
