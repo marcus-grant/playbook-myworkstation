@@ -1,2 +1,7 @@
 ---
 # tasks file for my-common-packages
+- name: install packages in common_packages
+  package:
+    name: '{{ item }}'
+    state: present
+  loop: '{{ common_packages }}'

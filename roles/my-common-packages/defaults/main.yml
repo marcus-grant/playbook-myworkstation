@@ -1,2 +1,26 @@
 ---
 # defaults file for my-common-packages
+common_packages:
+  - openssh
+  - openssl
+  - openssh
+  - openssl
+  - wget
+  - curl
+  - git
+  - tig
+  - vim
+  - tmux
+  - fzf
+  - fd
+  - ripgrep
+  - tree
+  - ranger
+  - ncdu
+  - htop
+  - iotop
+  - xclip
+  - tldr
+  - cowsay
+  - cowfortune
+  - lolcat
