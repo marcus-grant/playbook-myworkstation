@@ -1,2 +1,17 @@
 ---
-test-var: blah
+### packages for extra-cli-packages install task
+extra_cli_packages:
+  - neovim
+  - ffmpeg
+  - lm_sensors
+  - pandoc
+
+
+### packages for extra-gui-packages install task
+extra_gui_packages:
+  - firefox
+  - chromium
+  - alacritty
+  - guake
+  - timeshift
+  - baobab

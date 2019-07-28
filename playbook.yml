@@ -3,6 +3,8 @@
   gather_facts: yes
   tasks:
   roles:
-    - marcus-grant.bootstrap-ansible-arch
-    - marcus-grant.mydotfiles
-    - { name: roles/my-common-packages, become: yes }
+  post_tasks:
+    - import_tasks: tasks/extra-cli-packages.yml
+    - import_tasks: tasks/extra-gui-packages.yml
+      when: >-
+        extra_gui_packages is defined and extra_gui_packages | length > 0

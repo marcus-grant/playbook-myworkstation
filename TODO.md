@@ -4,7 +4,6 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] Separate task for installing a list of shell packages will be specific to host/group
 - [ ] Separate task for installing a list of gui packages will be specific to host/group
 - [ ] Install all the fonts you want both from regular package mgr and from nerd fonts
 - [ ] Ensure tree is in the cli apps role
@@ -33,10 +32,13 @@ Future
     - This includes setting up pacman hooks & crond timetables
 - [ ] ssh-hardening role (there's one that exists, investigate)
 - [ ] git split out `my-common-packages` into its own role repo?
+- [ ] bluetooth role with audio support
+    - audio settings should probably be its own thing
 
 Completed
 ---------
 
+- [x] Separate task for installing a list of shell packages will be specific to host/group
 - [x] Common role for common package installs
 - [x] Get vault working
 - [x] Update prepare.yml to stop automatic suspend on VM
