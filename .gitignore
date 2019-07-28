@@ -1,3 +1,4 @@
 venv
-*vault.yml
+#*vault.yml
+*vault*
 .vagrant

@@ -73,6 +73,72 @@ I'm trying to develop more roles. This means separating them into their own proj
 
 Then run `ansible-galaxy install -r requirements.yml` makes sure the up-to-date version is present and available for local use, using the names given.
 
+Valuts Are Good for Secrets
+---------------------------
+
+I prefer to encrypt entire files in vaults instead of storing them as encrypted strings in variable files. That way, not only can I encrypt the contents en-masse, but it's possible to have git ignore the files entirely adding an extra layer of accident proofing that would lead to posting passwords and keys online.
+
+### Create a Vault File
+
+Ansible's `ansible-vault` is the installed utility to deal with encrypted files and strings inside files. The `create` sub-command allows for creating encrypted files.
+
+```sh
+ansible-vault create group_vars/vault.yml
+```
+
+This will do two things:
+
+1. Prompt for a password that unlocks the vault file to be read or modified
+2. Bring up the default editor command stored in environment variable `EDITOR` to edit the vault fault, in my case it's `vim`
+
+### Make Sure Git Ignores Vault Files
+
+All vault files are going to have the word `vault` in the filename, so make sure git isn't tracking any `vault` file in a `.gitignore` file.
+
+```
+# ...other ignores
+*vault*
+```
+
+### Adding a Password Key File to Unlock the Vault
+
+To make it easier to use ansible commands that require passwords, create a local file **OUTSIDE THE PROJECT DIRECTORY** that contains the password string that unlocks the vault. Pick a place, just make sure it's memorable and put either a random string or a new password that will be remembered, which might be good if multiple machines will manage playbooks. 
+
+To create a password file with a remembered password, just create a file of any name and place it somewhere memorable in the filesystem, or in another filesystem and enter only the password string into it. To create a random string use the `openssl rand` command to generate a random string and pipe it into a file:
+
+```sh
+echo "$(openssl rand -base64 48)" > /some/location/on/a/filesystem
+```
+
+To re-key a vault file, just use the old password, the new one (or the file) and use this `ansible-vault` subcommand `rekey`.
+
+```sh
+ansible-vault rekey \
+--new-vault-password-file=/some/location \
+--vault-password-file=/other/location
+./group_vars/vault.yml
+```
+
+It's recommended to re-key password files every once in a while and if an old password file was used to key the current vault the `--vault-password-file=` option allows decrypting the vault before rekey to a new password file.
+
+### Using Variables from Vaults
+
+Now the vault information has to actually be usable, otherwise why use it. Two common locations are useful for vault variables:
+
+1. Inventory files
+    - `ansible_ssh_pass='{{ vault_var_for_ssh_passwd }}'`
+    - `ansible_become_pass='{{ vault_var_for_privelege_escalation }}'`
+2. Plays to pass passwords to roles & tasks
+    - `include_vars: ./group_vars/vault.yml`
+    - useful for using passwords/keys on installed apps/services on remote
+
+### Viewing and Editing Vaults
+
+To view a vault file just use: `ansible-vault view group_vars/vault.yml` to see what variables are already put in the vault file, printed out in the terminal.
+
+To edit it, just use `ansible-vault edit`.
+
+
 References
 ----------
 
