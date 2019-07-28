@@ -5,10 +5,19 @@
   tasks:
     - name: Install python for ansible
       raw: test -e /usr/bin/python || (pacman --noconfirm -S python)
-      become: true
+      become: yes
       changed_when: no
+    - name: Suspend Disabled
+      systemd:
+        name: suspend.target
+        masked: yes
+    - name: Sleep Disabled
+      systemd:
+        name: sleep.target
+        masked: yes
+        daemon_reload: yes
     - name: Upgrade packages
-      become: true
+      become: yes
       pacman:
         update_cache: yes
         upgrade: yes
