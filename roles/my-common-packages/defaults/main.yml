@@ -3,8 +3,7 @@
 common_packages:
   - openssh
   - openssl
-  - openssh
-  - openssl
+  - keychain
   - wget
   - curl
   - git
