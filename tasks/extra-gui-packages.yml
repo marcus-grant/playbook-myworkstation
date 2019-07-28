@@ -1,0 +1,11 @@
+---
+# A task that allows specifying at host or group level extra packages...
+# ... to install that have a gui.
+- name: install extra_gui_packages
+  become: yes
+  package:
+    name: '{{ item }}'
+    state: present
+  loop: '{{ extra_gui_packages }}'
+  when: >-
+    (extra_gui_packages is defined) and (extra_gui_packages | length > 0)
