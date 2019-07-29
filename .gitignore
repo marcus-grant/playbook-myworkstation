@@ -2,3 +2,4 @@ venv
 #*vault.yml
 *vault*
 .vagrant
+*__pycache__*
