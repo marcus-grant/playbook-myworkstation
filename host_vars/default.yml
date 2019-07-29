@@ -13,5 +13,5 @@ extra_gui_packages:
   - chromium
   - alacritty
   - guake
-  - timeshift
+  # - timeshift needs aur
   - baobab
