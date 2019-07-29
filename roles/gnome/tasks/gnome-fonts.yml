@@ -1,0 +1,7 @@
+---
+# Handle font settings for gnome
+- name: set window title to gnome_font_window_title(_size)
+  gconftool2:
+    value_type: 'string'
+    key: '/org/gnome/desktop/wm/'
+    value: '{{ gnome_font_window_title }} {{ gnome_font_window_title_size }}'

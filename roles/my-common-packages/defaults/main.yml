@@ -6,6 +6,7 @@ common_packages:
   - keychain
   - wget
   - curl
+  - unzip
   - git
   - tig
   - vim
