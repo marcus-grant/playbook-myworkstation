@@ -1,2 +1,24 @@
 ---
+# TODO: split these out by os_family
 # defaults file for fonts
+fonts_from_packages:
+  - otf-fira-sans
+  - ttf-roboto
+  - ttf-ubuntu-font-family
+  - ttf-ubuntu-font-family
+  - noto-fonts-emoji
+  - noto-fonts
+  # - nerd-fonts-noto-sans-mono
+
+# These aren't os-specific (for unix-based)
+fonts_from_http:
+  - local_dir: iosevka
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip
+    src: http
+  - local_dir: firacode
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/FiraCode.zip
+    src: http
+  - local_dir: terminus
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Terminus.zip
+    src: http
+

@@ -1,0 +1,7 @@
+---
+- name: install fonts available on pacman
+  become: yes
+  pacman:
+    name: '{{ item }}'
+    state: present
+  loop: '{{ fonts_from_packages }}'

@@ -4,16 +4,13 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] Separate task for installing a list of gui packages will be specific to host/group
 - [ ] Install all the fonts you want both from regular package mgr and from nerd fonts
-- [ ] Ensure tree is in the cli apps role
-- [ ] cli apps role (includes fzf, ripgrep and fd) and a variable set of apps
+- [ ] Configure gnome fonts (if in use) using gconf
+    - look at pop_OS for their font settings
 
 Planning
 --------
 
-- [ ] Configure gnome fonts (if in use) using gconf
-    - look at pop_OS for their font settings
 - [ ] flatpak role to install flatpak and a variable set of apps
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] Setup play/run/inventory for local system
@@ -21,6 +18,7 @@ Planning
 Future
 ------
 
+- [ ] add aur response to failed extra package install
 - [ ] Add usage section in README
 - [ ] go-env role to setup proper golang setup with GOPATH in different path from projects & seperate bin for user than sys
 - [ ] linux_gaming role
@@ -34,10 +32,12 @@ Future
 - [ ] git split out `my-common-packages` into its own role repo?
 - [ ] bluetooth role with audio support
     - audio settings should probably be its own thing
+- [ ] Antivirus role
 
 Completed
 ---------
 
+- [x] Separate task for installing a list of gui packages will be specific to host/group
 - [x] Separate task for installing a list of shell packages will be specific to host/group
 - [x] Common role for common package installs
 - [x] Get vault working

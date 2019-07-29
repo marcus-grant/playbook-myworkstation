@@ -6,6 +6,7 @@
     - marcus-grant.bootstrap-ansible-arch
     - marcus-grant.mydotfiles
     - { name: roles/my-common-packages, become: yes }
+    - fonts
   post_tasks:
     - import_tasks: tasks/extra-cli-packages.yml
     - import_tasks: tasks/extra-gui-packages.yml

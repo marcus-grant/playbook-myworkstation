@@ -1,2 +1,4 @@
 ---
-# tasks file for fonts
+# These need to be specific to the package names of the os-family
+- import_tasks: fonts-Archlinux.yml
+  when: ansible_facts['os_family'] == "Archlinux"
