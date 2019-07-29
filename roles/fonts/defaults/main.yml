@@ -12,13 +12,14 @@ fonts_from_packages:
 
 # These aren't os-specific (for unix-based)
 fonts_from_http:
-  - local_dir: iosevka
+  - local_subdir: iosevka
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip
-    src: http
-  - local_dir: firacode
+  - local_subdir: firacode
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/FiraCode.zip
-    src: http
-  - local_dir: terminus
+  - local_subdir: terminus
     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Terminus.zip
-    src: http
+  - local_subdir: source-code-pro
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip
+  - local_subdir: inconsolata-go
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/InconsolataGo.zip
 

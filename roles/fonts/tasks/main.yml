@@ -2,3 +2,28 @@
 # These need to be specific to the package names of the os-family
 - import_tasks: fonts-Archlinux.yml
   when: ansible_facts['os_family'] == "Archlinux"
+
+- name: make sure user font folder is available
+  file:
+    path: '~/.local/share/fonts'
+    state: directory
+    mode: 0755
+
+- name: ensure unzip is installed for nerd-font unarchive
+  become: yes
+  pacman:
+    name: unzip
+    state: present
+
+# These can be done on any os-family, but src url and dest folder are needed
+# - include_tasks: fonts-http.yml
+- name: download & decompress font {{ item.local_subdir }}
+  unarchive:
+    src: '{{ item.url }}'
+    dest: '~/.local/share/fonts/{{ item.local_subdir }}'
+    remote_src: yes
+    keep_newer: yes
+    creates: '~/.local/share/fonts/{{ item.local_subdir }}'
+  loop: '{{ fonts_from_http }}'
+
+# Set system fonts
