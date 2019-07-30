@@ -4,6 +4,8 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Test that when the role is published and installed with galaxy it does synchronize file path correctly
+- [ ] make a special nerd font handler that allows use of end of url name before zip ext
 - [ ] Improve defaults for publishing
 
 Planning
@@ -19,6 +21,7 @@ Future
 - [ ] Figure out a good way to test this
 - [ ] Do better handling of OS specific default vars that can be overriden
     - something like [this](https://stackoverflow.com/questions/41189336/define-ansible-variable-in-a-role-with-os-specific-default-which-can-be-easily-o#41193233)
+- [ ] Come up with section that handles copying files from ansible controller
 
 Completed
 ---------

@@ -1,7 +1,28 @@
 ---
-- name: install fonts available on pacman
+- name: install fonts with pacman
   become: yes
   pacman:
     name: '{{ item }}'
     state: present
   loop: '{{ fonts_from_packages }}'
+
+- block:
+  - set_fact:
+      single_aur_font: '{{ fonts_from_aur | join }}'
+    when: fonts_from_aur | length == 1
+
+  - name: install fonts with aur
+    become: aur_builder
+    aur:
+      name: '{{ item }}'
+    loop: '{{ fonts_from_aur }}'
+    when: fonts_from_aur | length > 1
+
+
+  - name: install single font with aur
+    become: aur_builder
+    aur:
+      name: '{{ single_aur_font }}'
+  when: aur_use_helper and
+    fonts_from_aur is defined and
+    fonts_from_aur | length > 0

@@ -9,21 +9,21 @@
     state: directory
     mode: 0755
 
-- name: ensure unzip is installed for nerd-font unarchive
+- name: ensure unzip is installed for unarchive fetching zip fonts
   become: yes
   pacman:
     name: unzip
     state: present
 
-# These can be done on any os-family, but src url and dest folder are needed
-# - include_tasks: fonts-http.yml
-- name: download & decompress font {{ item.local_subdir }}
-  unarchive:
-    src: '{{ item.url }}'
-    dest: '~/.local/share/fonts/{{ item.local_subdir }}'
-    remote_src: yes
-    keep_newer: yes
-    creates: '~/.local/share/fonts/{{ item.local_subdir }}'
+- include_tasks: fonts-url-unarchive.yml
   loop: '{{ fonts_from_http }}'
-
-# Set system fonts
+# TODO: Consider having a section dedicated to ansible controller local fonts
+# - name: rsync playbook stored font files to font folder
+#   synchronize:
+#     src: '{{ role_path }}/files/*'
+#     dest: '~/.local/share/fonts' # required. Path on the destination host that will be synchronized from the source; The path can be absolute or relative.
+#     rsync_timeout: 30
+#     # owner: "{{ lookup('env','USER') }}"
+#     # existing_only: no # not required. Skip creating new files on receiver.
+#     archive: yes
+#     mode: pull

@@ -10,6 +10,9 @@ fonts_from_packages:
   - noto-fonts
   # - nerd-fonts-noto-sans-mono
 
+fonts_from_aur:
+  - ttf-roboto-slab
+
 # These aren't os-specific (for unix-based)
 fonts_from_http:
   - local_subdir: iosevka
