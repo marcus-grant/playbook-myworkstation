@@ -7,3 +7,4 @@ gnome:
       interface: "Fira Sans Semi-Light 10"
       document: "Roboto Slab 11"
       monospace: "FuraCode Nerd Font Mono 10"
+      guake: "FuraCode Nerd Font Mono Medium 9"

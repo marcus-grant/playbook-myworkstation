@@ -23,3 +23,9 @@
     state: present
     key: "/org/gnome/desktop/interface/monospace-font-name"
     value: "'{{ gnome.style.fonts.monospace }}'"
+
+- name: set guake font to gnome.style.fonts.guake
+  dconf:
+    state: present
+    key: "/apps/guake/style/font/style"
+    value: "'{{ gnome.style.fonts.guake }}'"
