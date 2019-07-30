@@ -15,7 +15,7 @@
       systemd:
         name: sleep.target
         masked: yes
-        daemon_reload: yes
+        # daemon_reload: yes # causes timeouts, why?
     - name: Upgrade packages
       become: yes
       pacman:

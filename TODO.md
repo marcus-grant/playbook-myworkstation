@@ -13,6 +13,7 @@ Planning
 - [ ] flatpak role to install flatpak and a variable set of apps
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] Setup play/run/inventory for local system
+- [ ] change the psutil from cli-packages to go into the pyenv role?
 
 Future
 ------

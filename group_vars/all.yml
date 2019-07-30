@@ -69,7 +69,7 @@ cli_packages:
   - cowsay
   - cowfortune
   - lolcat
-
+  - python-psutil
 
 ### packages for gui-packages install task
 gui_packages:

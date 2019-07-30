@@ -21,6 +21,3 @@ common_packages:
   - iotop
   - xclip
   - tldr
-  - cowsay
-  - cowfortune
-  - lolcat
