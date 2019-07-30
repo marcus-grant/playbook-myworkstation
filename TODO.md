@@ -13,8 +13,6 @@ Planning
 - [ ] change the psutil from cli-packages to go into the pyenv role?
 - [ ] python env or python dev env role
 - [ ] linux_gaming role
-- [ ] install popOS & use gnome role to config it
-    - consider [this](https://www.addictivetips.com/ubuntu-linux-tips/install-pop-gtk-theme-on-linux/)
 - [ ] ansible update/sort mirrorlist for pacman by speed
     - consider [this](https://wiki.archlinux.org/index.php/Mirrors)
 
@@ -25,6 +23,8 @@ Future
 - [ ] add aur response to failed extra package install
 - [ ] Add usage section in README
 - [ ] go-env role to setup proper golang setup with GOPATH in different path from projects & seperate bin for user than sys
+- [ ] install popOS & use gnome role to config it
+    - consider [this](https://www.addictivetips.com/ubuntu-linux-tips/install-pop-gtk-theme-on-linux/)
 - [ ] ansible/vagrant/vbox/libvirt dev role
 - [ ] Configure i3 fonts (if in use) 
     - this will need planning because it might require integrations w/ i3 dots
