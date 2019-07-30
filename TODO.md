@@ -13,6 +13,10 @@ Planning
 - [ ] change the psutil from cli-packages to go into the pyenv role?
 - [ ] python env or python dev env role
 - [ ] linux_gaming role
+- [ ] install popOS & use gnome role to config it
+    - consider [this](https://www.addictivetips.com/ubuntu-linux-tips/install-pop-gtk-theme-on-linux/)
+- [ ] ansible update/sort mirrorlist for pacman by speed
+    - consider [this](https://wiki.archlinux.org/index.php/Mirrors)
 
 Future
 ------
