@@ -4,7 +4,6 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] Install all the fonts you want both from regular package mgr and from nerd fonts
 - [ ] Configure gnome fonts (if in use) using gconf
     - look at pop_OS for their font settings
 
@@ -18,6 +17,7 @@ Planning
 Future
 ------
 
+- [ ] install pop_OS gtk theme using gnome role, probably with dconf aswell
 - [ ] add aur response to failed extra package install
 - [ ] Add usage section in README
 - [ ] go-env role to setup proper golang setup with GOPATH in different path from projects & seperate bin for user than sys
@@ -33,10 +33,14 @@ Future
 - [ ] bluetooth role with audio support
     - audio settings should probably be its own thing
 - [ ] Antivirus role
+- [ ] Creat run scripts for CI/CD pipeline
+    - [ ] A proper test system that tests all roles excluding external ones
+    - [ ] A linter command with thought out lint configs for yamllint, ansible lint, 
 
 Completed
 ---------
 
+- [x] Install all the fonts you want both from regular package mgr and from nerd fonts
 - [x] Separate task for installing a list of gui packages will be specific to host/group
 - [x] Separate task for installing a list of shell packages will be specific to host/group
 - [x] Common role for common package installs

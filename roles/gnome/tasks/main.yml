@@ -1,2 +1,3 @@
 ---
 # tasks file for gnome
+- import_tasks: gnome-fonts.yml

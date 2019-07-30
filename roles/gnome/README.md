@@ -13,6 +13,10 @@ good idea to mention in this section that the boto package is required.
 Role Variables
 --------------
 
+Note that the values for dconf come in strange formats and for the fonts, the typical font cache names aren't always going to work when setting fonts. If changing these font names, it's best to go into the fonts section of gnome tweak, for example, then setting the font on some setting, then looking for what the value dconf gives to the changed font.
+
+### TODO
+
 A description of the settable variables for this role should go here, including
 any variables that are in defaults/main.yml, vars/main.yml, and any variables
 that can/should be set via parameters to the role. Any variables that are read

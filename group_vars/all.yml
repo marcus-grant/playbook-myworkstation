@@ -58,3 +58,25 @@ dotfiles:
 
 ### my-common-packages vars
 # not shown it's too long and should be changed fairly rarely
+
+### packages for cli-packages install task
+cli_packages:
+  - neovim
+  - dconf
+  - ffmpeg
+  - lm_sensors
+  - pandoc
+  - cowsay
+  - cowfortune
+  - lolcat
+
+
+### packages for gui-packages install task
+gui_packages:
+  - firefox
+  - chromium
+  - alacritty
+  - guake
+  # - timeshift needs aur
+  - baobab
+  - dconf-editor

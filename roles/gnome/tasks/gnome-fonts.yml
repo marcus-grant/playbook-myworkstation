@@ -1,7 +1,25 @@
 ---
 # Handle font settings for gnome
-- name: set window title to gnome_font_window_title(_size)
-  gconftool2:
-    value_type: 'string'
-    key: '/org/gnome/desktop/wm/'
-    value: '{{ gnome_font_window_title }} {{ gnome_font_window_title_size }}'
+- name: set window title font to gnome.style.fonts.window_title
+  dconf:
+    state: present
+    key: "/org/gnome/desktop/wm/preferences/titlebar-font"
+    value: "'{{ gnome.style.fonts.window_title }}'"
+
+- name: set default interface font to gnome.style.fonts.interface
+  dconf:
+    state: present
+    key: "/org/gnome/desktop/interface/font-name"
+    value: "'{{ gnome.style.fonts.interface }}'"
+
+- name: set default document font to gnome.style.fonts.document
+  dconf:
+    state: present
+    key: "/org/gnome/desktop/interface/document-font-name"
+    value: "'{{ gnome.style.fonts.document }}'"
+
+- name: set default monospace font to gnome.style.fonts.monospace
+  dconf:
+    state: present
+    key: "/org/gnome/desktop/interface/monospace-font-name"
+    value: "'{{ gnome.style.fonts.monospace }}'"

@@ -1,2 +1,9 @@
 ---
 # defaults file for gnome
+gnome:
+  style:
+    fonts:
+      window_title: "Fira Sans SemiBold 10"
+      interface: "Fira Sans Semi-Light 10"
+      document: "Roboto Slab 11"
+      monospace: "FuraCode Nerd Font Mono 10"

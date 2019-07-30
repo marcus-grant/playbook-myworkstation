@@ -1,17 +1,22 @@
 ---
-### packages for extra-cli-packages install task
-extra_cli_packages:
+### packages for cli-packages install task
+cli_packages:
   - neovim
+  - dconf
   - ffmpeg
   - lm_sensors
   - pandoc
+  - cowsay
+  - cowfortune
+  - lolcat
 
 
-### packages for extra-gui-packages install task
-extra_gui_packages:
+### packages for gui-packages install task
+gui_packages:
   - firefox
   - chromium
   - alacritty
   - guake
   # - timeshift needs aur
   - baobab
+  - dconf-editor

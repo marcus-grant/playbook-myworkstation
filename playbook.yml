@@ -1,12 +1,16 @@
 ---
 - hosts: all
   gather_facts: yes
-  tasks:
+  pre_tasks:
+    - name: ensure python is installed
+      raw: test -e /usr/bin/python || (pacman --noconfirm -S python)
+      become: yes
+      changed_when: no
+    - import_tasks: tasks/cli-packages.yml
+    - import_tasks: tasks/gui-packages.yml
   roles:
     - marcus-grant.bootstrap-ansible-arch
-    - marcus-grant.mydotfiles
     - { name: roles/my-common-packages, become: yes }
+    - marcus-grant.mydotfiles
     - fonts
-  post_tasks:
-    - import_tasks: tasks/extra-cli-packages.yml
-    - import_tasks: tasks/extra-gui-packages.yml
+    - gnome
