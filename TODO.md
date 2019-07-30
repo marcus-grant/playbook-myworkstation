@@ -4,16 +4,15 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] Configure gnome fonts (if in use) using gconf
-    - look at pop_OS for their font settings
+- [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 
 Planning
 --------
 
 - [ ] flatpak role to install flatpak and a variable set of apps
-- [ ] NVM role for managing setup of dev environment for node and setting default node to lts
-- [ ] Setup play/run/inventory for local system
 - [ ] change the psutil from cli-packages to go into the pyenv role?
+- [ ] python env or python dev env role
+- [ ] linux_gaming role
 
 Future
 ------
@@ -22,7 +21,6 @@ Future
 - [ ] add aur response to failed extra package install
 - [ ] Add usage section in README
 - [ ] go-env role to setup proper golang setup with GOPATH in different path from projects & seperate bin for user than sys
-- [ ] linux_gaming role
 - [ ] ansible/vagrant/vbox/libvirt dev role
 - [ ] Configure i3 fonts (if in use) 
     - this will need planning because it might require integrations w/ i3 dots
@@ -41,6 +39,8 @@ Future
 Completed
 ---------
 
+- [x] Setup play/run/inventory for local system
+- [x] Configure gnome fonts (if in use) using gconf
 - [x] Install all the fonts you want both from regular package mgr and from nerd fonts
 - [x] Separate task for installing a list of gui packages will be specific to host/group
 - [x] Separate task for installing a list of shell packages will be specific to host/group
