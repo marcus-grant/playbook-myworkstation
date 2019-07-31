@@ -70,6 +70,10 @@ cli_packages:
   - cowfortune
   - lolcat
   - python-psutil
+  - python-neovim # consider putting these in a python dev env role?
+  - nodejs # consider putting into a nvm/node/npm role also have it install node neovim helper
+  - npm # same as above
+  - yarn # same as above
 
 ### packages for gui-packages install task
 gui_packages:
