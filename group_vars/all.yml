@@ -69,6 +69,7 @@ cli_packages:
   - cowsay
   - cowfortune
   - lolcat
+  - xclip
   - python-psutil
   - python-neovim # consider putting these in a python dev env role?
   - nodejs # consider putting into a nvm/node/npm role also have it install node neovim helper

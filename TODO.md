@@ -43,6 +43,7 @@ Future
 Completed
 ---------
 
+- [x] Update cli_packages to include xclip, since it's removed from common-packages role
 - [x] Setup play/run/inventory for local system
 - [x] Configure gnome fonts (if in use) using gconf
 - [x] Install all the fonts you want both from regular package mgr and from nerd fonts
