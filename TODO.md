@@ -13,6 +13,8 @@ Planning
 - [ ] change the psutil from cli-packages to go into the pyenv role?
 - [ ] python env or python dev env role
 - [ ] linux_gaming role
+- [ ] Add check to bootstrap role that checks for aur module installed via local aur
+    - ie somewhere in usr not home
 - [ ] install popOS & use gnome role to config it
     - consider [this](https://www.addictivetips.com/ubuntu-linux-tips/install-pop-gtk-theme-on-linux/)
 - [ ] ansible update/sort mirrorlist for pacman by speed
@@ -43,6 +45,7 @@ Future
 Completed
 ---------
 
+- [x] Add ansible-galaxy install requirements check into local run script
 - [x] Setup play/run/inventory for local system
 - [x] Configure gnome fonts (if in use) using gconf
 - [x] Install all the fonts you want both from regular package mgr and from nerd fonts
