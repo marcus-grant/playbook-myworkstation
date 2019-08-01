@@ -12,5 +12,6 @@
     - marcus-grant.bootstrap-ansible-arch
     - { name: roles/my-common-packages, become: yes }
     - marcus-grant.mydotfiles
+    - marcus-grant.common-packages
     - fonts
     - gnome

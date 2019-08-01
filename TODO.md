@@ -5,6 +5,9 @@ In-Progress
 -----------
 
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
+- [ ] Keyboard shortcuts tasks for gnome role
+    - [ ] Virtual workspace up/down super + pg up / pg down
+    - [ ] Virtual workspace by number super + 1,2,3...
 
 Planning
 --------
@@ -27,6 +30,8 @@ Future
 - [ ] add aur response to failed extra package install
 - [ ] Add usage section in README
 - [ ] go-env role to setup proper golang setup with GOPATH in different path from projects & seperate bin for user than sys
+- [ ] install popOS & use gnome role to config it
+    - consider [this](https://www.addictivetips.com/ubuntu-linux-tips/install-pop-gtk-theme-on-linux/)
 - [ ] ansible/vagrant/vbox/libvirt dev role
 - [ ] Configure i3 fonts (if in use) 
     - this will need planning because it might require integrations w/ i3 dots
@@ -46,6 +51,7 @@ Completed
 ---------
 
 - [x] Add ansible-galaxy install requirements check into local run script
+- [x] Update cli_packages to include xclip, since it's removed from common-packages role
 - [x] Setup play/run/inventory for local system
 - [x] Configure gnome fonts (if in use) using gconf
 - [x] Install all the fonts you want both from regular package mgr and from nerd fonts
