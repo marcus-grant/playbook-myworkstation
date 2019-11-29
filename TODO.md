@@ -12,6 +12,7 @@ In-Progress
 Planning
 --------
 
+- [ ] make sure `bash-completion` is installed on arch/manjaro workstations
 - [ ] flatpak role to install flatpak and a variable set of apps
 - [ ] change the psutil from cli-packages to go into the pyenv role?
 - [ ] python env or python dev env role
