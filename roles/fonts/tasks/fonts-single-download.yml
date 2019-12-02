@@ -1,0 +1,23 @@
+---
+# TODO: make a special nerd font handler that allows use of end of url name before zip ext
+- name: 'destination directorie for font {{ item.local_subdir }}'
+  file:
+    path: '~/.local/share/fonts/{{ item.local_subdir }}'
+    state: directory
+
+# These can be done on any os-family, but src url and dest folder are needed
+# - include_tasks: fonts-http.yml
+- name: 'download & decompress font {{ item.local_subdir }}'
+  unarchive:
+    src: '{{ item.url }}'
+    dest: '~/.local/share/fonts/{{ item.local_subdir }}'
+    remote_src: yes
+    keep_newer: yes
+    creates: '~/.local/share/fonts/{{ item.local_subdir }}/.ansibleFlag'
+
+- name: create empty flag file indicating not to download next time
+  copy:
+    content: ""
+    dest: '~/.local/share/fonts/{{ item.local_subdir }}/.ansibleFlag'
+    force: no
+    mode: 0755
