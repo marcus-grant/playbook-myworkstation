@@ -4,7 +4,7 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] NVM role for managing setup of dev environment for node and setting default node to lts
+- [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
 - [ ] Keyboard shortcuts tasks for gnome role
     - [ ] Virtual workspace up/down super + pg up / pg down
     - [ ] Virtual workspace by number super + 1,2,3...
@@ -14,6 +14,7 @@ Planning
 
 - [ ] make sure `bash-completion` is installed on arch/manjaro workstations
 - [ ] flatpak role to install flatpak and a variable set of apps
+- [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] change the psutil from cli-packages to go into the pyenv role?
 - [ ] python env or python dev env role
 - [ ] linux_gaming role
