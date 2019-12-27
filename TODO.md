@@ -4,6 +4,7 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Add default link var for neovim's `coc-settings.json` location added to repo
 - [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
 - [ ] Keyboard shortcuts tasks for gnome role
     - [ ] Virtual workspace up/down super + pg up / pg down
