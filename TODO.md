@@ -4,6 +4,7 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Finish fonts role with a remote storage location for all fonts
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 
 Planning
