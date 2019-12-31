@@ -9,14 +9,23 @@
     state: directory
     mode: 0755
 
-- name: ensure unzip is installed for unarchive fetching zip fonts
-  become: yes
-  pacman:
-    name: unzip
-    state: present
+- debug:
+    msg: '{{ item.url | splitext }}'
+  loop: fonts_set
 
-- include_tasks: fonts-url-unarchive.yml
-  loop: '{{ fonts_from_http }}'
+# - include_tasks: ./fonts-single-download.yml
+#   when:
+#   loop: '{{ fonts_sets }}'
+
+# - name: ensure unzip is installed for unarchive fetching zip fonts
+#   become: yes
+#   pacman:
+#     name: unzip
+#     state: present
+
+# - include_tasks: ./fonts-archive-download.yml
+#   loop: '{{ fonts_sets }}'
+
 # TODO: Consider having a section dedicated to ansible controller local fonts
 # - name: rsync playbook stored font files to font folder
 #   synchronize:
