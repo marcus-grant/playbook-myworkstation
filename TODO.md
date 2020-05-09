@@ -4,6 +4,14 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Guake
+    - [ ] Install Guake on...
+        - [ ] Arch
+        - [ ] Aptitude Based
+        - [ ] Yum based
+    - [ ] Configure `Ctrl+/` to perform neovim sequence `?/#` used as hack to toggle line comments like most editors
+        - Same thing gets done in alacritty for reference
+    - [ ] Confugre it to have theme variables to match larger gnome role theme, (esp. if using pop-gtk, pop-shell)
 - [ ] Add default link var for neovim's `coc-settings.json` location added to repo
 - [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
 - [ ] Keyboard shortcuts tasks for gnome role
