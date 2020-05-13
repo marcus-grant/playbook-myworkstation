@@ -5,6 +5,7 @@ In-Progress
 -----------
 
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
+- [ ] ActivityWatch Install, here's [docs][01]
 
 Planning
 --------
@@ -60,3 +61,6 @@ Completed
 - [x] Update prepare.yml to stop automatic suspend on VM
 - [x] Get marcus-grant.arch-bootstrap role to work
 - [x] Get vagrant test inventory to work
+
+
+[01]: https://docs.activitywatch.net/en/latest/getting-started.html "ActivityWatch Docs: Getting Started"
