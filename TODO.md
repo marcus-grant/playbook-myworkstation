@@ -4,14 +4,29 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Finish fonts role with a remote storage location for all fonts
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] ActivityWatch Install, here's [docs][01]
+- [ ] Add default link var for neovim's `coc-settings.json` location added to repo
+- [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
+- [ ] Keyboard shortcuts tasks for gnome role
+    - [ ] Virtual workspace up/down super + pg up / pg down
+    - [ ] Virtual workspace by number super + 1,2,3...
 
 Planning
 --------
 
+- [ ] Guake
+    - [ ] Install Guake on...
+        - [ ] Arch
+        - [ ] Aptitude Based
+        - [ ] Yum based
+    - [ ] Configure `Ctrl+/` to perform neovim sequence `?/#` used as hack to toggle line comments like most editors
+        - Same thing gets done in alacritty for reference
+    - [ ] Confugre it to have theme variables to match larger gnome role theme, (esp. if using pop-gtk, pop-shell)
 - [ ] make sure `bash-completion` is installed on arch/manjaro workstations
 - [ ] flatpak role to install flatpak and a variable set of apps
+- [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] change the psutil from cli-packages to go into the pyenv role?
 - [ ] python env or python dev env role
 - [ ] linux_gaming role
