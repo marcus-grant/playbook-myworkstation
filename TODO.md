@@ -4,6 +4,7 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Better firefox scrolling using [these][02] settings in `~/.mozilla/firefox/yourprofile/user.js`
 - [ ] Finish fonts role with a remote storage location for all fonts
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] ActivityWatch Install, here's [docs][01]
@@ -79,3 +80,4 @@ Completed
 
 
 [01]: https://docs.activitywatch.net/en/latest/getting-started.html "ActivityWatch Docs: Getting Started"
+[02]: https://wiki.archlinux.org/index.php/Firefox#Smooth_Scrolling "Arch Wiki: Firefox - Smooth Scroll"
