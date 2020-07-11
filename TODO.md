@@ -6,6 +6,7 @@ In-Progress
 
 - [ ] Finish fonts role with a remote storage location for all fonts
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
+    - There's a good example of what can be done [here][asdf]
 - [ ] Add default link var for neovim's `coc-settings.json` location added to repo
 - [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
 - [ ] Keyboard shortcuts tasks for gnome role
@@ -67,3 +68,5 @@ Completed
 - [x] Update prepare.yml to stop automatic suspend on VM
 - [x] Get marcus-grant.arch-bootstrap role to work
 - [x] Get vagrant test inventory to work
+
+[asdf]: https://github.com/nvm-sh/nvm
