@@ -4,9 +4,11 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Better firefox scrolling using [these][02] settings in `~/.mozilla/firefox/yourprofile/user.js`
 - [ ] Finish fonts role with a remote storage location for all fonts
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
     - There's a good example of what can be done [here][asdf]
+- [ ] ActivityWatch Install, here's [docs][01]
 - [ ] Add default link var for neovim's `coc-settings.json` location added to repo
 - [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
 - [ ] Keyboard shortcuts tasks for gnome role
@@ -16,6 +18,14 @@ In-Progress
 Planning
 --------
 
+- [ ] Guake
+    - [ ] Install Guake on...
+        - [ ] Arch
+        - [ ] Aptitude Based
+        - [ ] Yum based
+    - [ ] Configure `Ctrl+/` to perform neovim sequence `?/#` used as hack to toggle line comments like most editors
+        - Same thing gets done in alacritty for reference
+    - [ ] Confugre it to have theme variables to match larger gnome role theme, (esp. if using pop-gtk, pop-shell)
 - [ ] make sure `bash-completion` is installed on arch/manjaro workstations
 - [ ] flatpak role to install flatpak and a variable set of apps
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
@@ -69,4 +79,10 @@ Completed
 - [x] Get marcus-grant.arch-bootstrap role to work
 - [x] Get vagrant test inventory to work
 
+<<<<<<< HEAD
 [asdf]: https://github.com/nvm-sh/nvm
+=======
+
+[01]: https://docs.activitywatch.net/en/latest/getting-started.html "ActivityWatch Docs: Getting Started"
+[02]: https://wiki.archlinux.org/index.php/Firefox#Smooth_Scrolling "Arch Wiki: Firefox - Smooth Scroll"
+>>>>>>> 63bce01abb8d9e4d1fe7e31905ce881ac4954c49
