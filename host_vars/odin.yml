@@ -1,0 +1,89 @@
+### packages for cli-packages install task
+cli_packages:
+  - openssh-server
+  - openssl
+  - wget
+  - curl
+  - vim
+  - git
+  - vim
+  - tmux
+  - fzf
+  - fd-find
+  - ripgrep
+  - tree
+  - neovim
+  - dconf-cli
+  - ffmpeg
+  - lm-sensors
+  - pandoc
+  - cowsay
+  - lolcat
+  - xclip
+  - python-psutil
+  - nodejs # consider putting into a nvm/node/npm role also have it install node neovim helper
+  - npm # same as above
+  - yarnpkg # same 
+  - unzip
+  - tig
+  - ranger
+  - ncdu
+  - htop
+  - iotop
+  - tldr-py
+
+### packages for gui-packages install task
+gui_packages:
+  - chromium
+  - alacritty
+  - guake
+  - timeshift
+  - baobab
+  - dconf-editor
+
+### dotfiles
+dotfiles_local_root_dir: '~/.dots'
+dotfiles_git_server_base_url: 'github.com'
+dotfiles_git_username: 'marcus-grant'
+dotfiles_use_ssh: true
+dotfiles:
+  bash:
+    repo_name: 'dots-bash'
+    local_subdir_name: 'bash'
+    version: 'master'
+    links:
+      - { dest: '~/.bashrc', src: '~/.dots/bash/bashrc' }
+      - { dest: '~/.profile', src: '~/.dots/bash/profile' }
+      - { dest: '~/.bash_profile', src: '~/.dots/bash/bash_profile' }
+  vim:
+    repo_name: 'dots-vim'
+    local_subdir_name: 'vim'
+    version: 'master'
+    links:
+      - { dest: '~/.vim', src: '~/.dots/vim' }
+      - { dest: '~/.vimrc', src: '~/.dots/vim/vimrc' }
+  neovim:
+    repo_name: 'dots-neovim'
+    local_subdir_name: 'neovim'
+    version: 'master'
+    links:
+      - { dest: '~/.config/nvim', src: '~/.dots/neovim' }
+  tmux:
+    repo_name: 'dots-tmux'
+    local_subdir_name: 'tmux'
+    version: 'master'
+    links:
+      - { dest: '~/.tmux.conf', src: '~/.dots/tmux/.tmux.conf' }
+      - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
+  alacritty:
+    repo_name: 'dots-alacritty'
+    local_subdir_name: 'alacritty'
+    version: 'master'
+    links:
+      - { dest: '~/.config/alacritty', src: '~/.dots/alacritty' }
+  i3:
+    repo_name: 'dots-i3'
+    local_subdir_name: 'i3'
+    version: 'master'
+    links:
+      - { dest: '~/.config/i3', src: '~/.dots/i3' }
