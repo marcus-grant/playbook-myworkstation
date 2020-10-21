@@ -1,9 +1,12 @@
 ---
 # TODO: consider refactor to use tool-versions config file instead
+# - debug:
+#     msg: "{{undefined | default('~/.asdf_data_dir')}}"
+
 - name: clone asdf repo
   git:
     repo: git@github.com:asdf-vm/asdf.git
-    dest: asdf_data_dir | default("~/.asdf_data_dir")
+    dest: "{{asdf_data_dir | default('~/.asdf_data_dir')}}"
     update: false
     version: "{{asdf_version | default(master)}}"
 
@@ -49,7 +52,3 @@
       - nodejs
       - "{{asdf_node_versions[0]}}"
   when: asdf_node_versions[0] not in node_cmd_version.stdout
-
-
-# - name: set global version for nodejs to {{asdf_node_versions[0]}}
-#   command:
