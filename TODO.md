@@ -19,6 +19,7 @@ In-Progress
   - [ ] extra-cli
   - [ ] extra-gui
   - [ ] flatpacks
+- [ ] Fix security alerts: https://github.com/marcus-grant/playbook-myworkstation/network/alerts
 - [ ] boostsrap.sh to install core utilities, ansible & its deps
 - [ ] fix tag running scripts to not include other roles
 - [ ] Better firefox scrolling using [these][02] settings in `~/.mozilla/firefox/yourprofile/user.js`
