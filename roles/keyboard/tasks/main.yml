@@ -1,0 +1,7 @@
+---
+- name: remap keyboard keys using dconf xkb options
+  dconf:
+    state: present
+    key: "/org/gnome/desktop/input-sources/xkb-options"
+    value: "{{ keyboard_dconf_options }}"
+  when: keyboard_dconf_xkb_remaps_enable | default(false)

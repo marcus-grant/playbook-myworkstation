@@ -1,3 +1,9 @@
+### keyboard dconf mapping options
+keyboard_dconf_xkb_remaps_enable: true
+keyboard_dconf_options: "['caps:escape', 'lv3:ralt_switch']"
+  # - "caps:escape"  # caps becomes escape
+  # - "lv3:ralt_switch"  # RALT layer 3 int'l char maps
+
 ### packages for cli-packages install task
 cli_packages:
   - openssh-server
@@ -41,6 +47,14 @@ gui_packages:
   - baobab
   - dconf-editor
 
+### flatpak installations task
+flatpaks:
+  - org.gtk.Gtk3theme.Pop-dark
+  - org.mozilla.firefox
+  - org.mozilla.Thunderbird
+  - com.slack.Slack
+  - org.glimpse_editor.Glimpse
+  - org.freecadweb.FreeCAD 
 ### dotfiles
 dotfiles_local_root_dir: '~/.dots'
 dotfiles_git_server_base_url: 'github.com'

@@ -1,3 +1,4 @@
 ---
-# tasks file for gnome
+# set the default gnome fonts
 - import_tasks: gnome-fonts.yml
+  when: set_gnome_fonts.yml | default(false)

@@ -22,5 +22,6 @@
     # - import_tasks: tasks/gui-packages.yml
   roles:
     # - marcus-grant.mydotfiles
+    - {role: 'keyboard', tags: 'keyboard'}
     # - gnome
   #   - fonts
