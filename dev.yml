@@ -2,25 +2,6 @@
 - hosts: all
   gather_facts: yes
   pre_tasks:
-      # These will check for python binary and install otherwise
-      # TODO: Turn into a bootstrap shell script instead
-    - name: ensure python is installed (Arch-family linux)
-      raw: test ! -e /usr/bin/python && (pacman --noconfirm -S python)
-      become: yes
-      changed_when: no
-      ignore_errors: yes
-      when: ansible_os_family == 'Archlinux'
-    - name: ensure python is installed (debian-family linux)
-      raw: test ! -e /usr/bin/python && (apt install -y python)
-      ignore_errors: yes
-      become: yes
-      changed_when: no
-      when: ansible_os_family == 'Debian'
-    - name: ensure python is installed (RedHat family linux)
-      raw: test ! -e /usr/bin/python && (yum install -y python)
-      become: yes
-      changed_when: no
-      when: ansible_os_family == 'RedHat'
     # - import_tasks: tasks/cli-packages.yml
     # - import_tasks: tasks/gui-packages.yml
   # roles:

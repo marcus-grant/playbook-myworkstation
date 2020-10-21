@@ -12,7 +12,7 @@ if [ $# -gt 0 ]; then
     _ANS_BECOME_PASSWD="--extra-vars \"ansible_sudo_pass=$1\""
 fi
 if [ $# -gt 1 ]; then
-    _ANS_TAG="--tags=\"$2\""
+    _ANS_TAG="--tags \"$2\""
 fi
 
 # first check that ansible-galaxy requirements are met

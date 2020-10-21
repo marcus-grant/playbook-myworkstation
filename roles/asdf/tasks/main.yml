@@ -1,0 +1,39 @@
+---
+- name: clone asdf repo
+  git:
+    repo: git@github.com:asdf-vm/asdf.git
+    dest: asdf_data_dir | default("~/.asdf_data_dir")
+    update: false
+    version: "{{asdf_version | default(master)}}"
+
+- name: add node plugin to asdf using command
+  command:
+    argv:
+      - "{{asdf_data_dir}}/bin/asdf"
+      - "plugin-add"
+      - "nodejs"
+    creates: "{{asdf_data_dir}}/plugins/nodejs"
+  register: asdf_node_add
+  failed_when: asdf_node_add.rc == 2
+
+- name: import PGP keys for asdf_nodejs plugin
+  command:
+    argv:
+      - bash
+      - "-c"
+      - "{{asdf_data_dir}}/plugins/nodejs/bin/import-release-team-keyring"
+    creates: "{{ansible_env.HOME}}/.gnupg/asdf-nodejs.gpg"
+
+- name: install node {{asdf_node_versions}} with asdf
+  command:
+    argv:
+      - "{{asdf_data_dir}}/bin/asdf"
+      - "install"
+      - "nodejs"
+      - "{{item}}"
+    creates: "{{asdf_data_dir}}/installs/nodejs/{{item}}"
+  loop: "{{asdf_node_versions}}"
+
+# TODO: consider refactor to use tool-versions config file instead
+# - name: set global version for nodejs to {{asdf_node_versions[0]}}
+#   command:
