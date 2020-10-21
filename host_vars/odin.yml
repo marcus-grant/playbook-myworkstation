@@ -61,7 +61,7 @@ asdf_version: master
 asdf_data_dir: "~/.local/share/asdf"
 asdf_config_file: "{{asdf_data_dir}}/asdfrc"
 asdf_default_tool_versions_filename: "${{asdf_data_dir}}/tool-versions"
-asdf_node_versions: ['14.14.0', '15.0.0']
+asdf_node_versions: ['15.0.1','14.14.0']
 
 ### dotfiles
 dotfiles_local_root_dir: '~/.dots'

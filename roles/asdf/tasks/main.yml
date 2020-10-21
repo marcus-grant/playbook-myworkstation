@@ -1,4 +1,5 @@
 ---
+# TODO: consider refactor to use tool-versions config file instead
 - name: clone asdf repo
   git:
     repo: git@github.com:asdf-vm/asdf.git
@@ -34,6 +35,21 @@
     creates: "{{asdf_data_dir}}/installs/nodejs/{{item}}"
   loop: "{{asdf_node_versions}}"
 
-# TODO: consider refactor to use tool-versions config file instead
+- name: asdf check current version of node to determine if global is set
+  command:
+    argv: ['node', '-v']
+  register: node_cmd_version
+  changed_when: node_cmd_version.rc != 0
+
+- name: asdf set global default version of node to {{asdf_node_versions[0]}}
+  command:
+    argv:
+      - "{{asdf_data_dir}}/bin/asdf"
+      - global
+      - nodejs
+      - "{{asdf_node_versions[0]}}"
+  when: asdf_node_versions[0] not in node_cmd_version.stdout
+
+
 # - name: set global version for nodejs to {{asdf_node_versions[0]}}
 #   command:

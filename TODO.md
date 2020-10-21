@@ -5,6 +5,7 @@ In-Progress
 -----------
 
 - [ ] handler or followup for dotfiles where profile with new env vars are updated
+- [ ] fix tags argument to run only singly tagged playbooks
 - [-] ASDF role with subtasks for installing all dev environments
   - [x] ASDF Tool install
   - [x] node install
