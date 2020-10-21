@@ -4,9 +4,9 @@ Ansible Arch-Family Workstation Playbook
 Summary
 -------
 
-This is a repository for my personal playbook that I run to provision machines that act as my workstations. This includes a desktop and two laptops. Right now they're all either Arch or Manjaro Linux machines, but I'm considering a transition to Debian at some point so I will probably be updating it at some point to work for Debian. And I might use it to provision my rarely used mac mini, which is just running as a debian server at the moment.
+> **Note**, this is a highly personal set of customizations that work for me. With all sensitive information handled in a completely seperate software stack so don't bother trying to find them here. Although I try and make my personal playbooks somewhat flexible to future changes because that benefits me in reducing development time, I urge you to use this as a template for your own ideas instead of directly cloning and running this. It will change your system in sometimes undesirable ways, *such as remapping caps lock and right alt keys*, setting undervolting profiles for my CPUs, and other changes specific to my needs that can be hard to revert without understanding how these specific hacks work. But you are certainly free to do so understanding that I take no responsibility for the changes it does to your system.
 
-You're more than welcome to use the playbook yourself, but I warn you it's likely **highly** personalized so all of my roles, variables and tasks aren't necessarily optimized for generic reuse. I recommend forking or looking over the playbook and taking what looks best for your own uses.
+This is a repository for my personal playbook that I run to provision machines that act as my workstations. This includes a desktop and two laptops. Right now they're all either Arch, Debian Testing, or Pop_OS! (Ubuntu with better hardware compatibility and design choices). I'm considering adding an ARM Macbook to the mix in the very near future depending on how Apple handles homebrew with their ARM CPUs. Here's an issue tracker thread over at [homebrew](https://github.com/Homebrew/brew/issues/7857) concerned with how the ARM transition will affect them.
 
 Usage
 -----
