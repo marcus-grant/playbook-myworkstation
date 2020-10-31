@@ -12,6 +12,7 @@ In-Progress
   - [ ] python install
   - [ ] deno
   - [ ] postgres
+  - [ ] IF problems arise with installs of asdf-node + using yarn, add tasks using this [fix](https://github.com/asdf-vm/asdf-nodejs/issues/42#issuecomment-360884173)
 - [ ] Refactor cli, gui packages to roles, a role for...
   - all these have overrides
   - [ ] common-cli
