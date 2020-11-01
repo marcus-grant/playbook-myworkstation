@@ -1,0 +1,7 @@
+---
+
+undervolt_dir: /opt/undervolt
+undervolt_bin_symlink: /usr/local/bin
+undervolt_offset_core: -50
+undervolt_offset_cache: -50
+undervolt_offset_gpu: -30

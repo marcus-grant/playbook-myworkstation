@@ -1,0 +1,11 @@
+---
+- name: start undervolt
+  systemd:
+    name: undervolt
+    state: started
+    enabled: true
+
+- name: reload undervolt
+  systemd:
+    name: undervolt
+    state: reloaded

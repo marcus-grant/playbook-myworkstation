@@ -1,0 +1,41 @@
+---
+
+- name: "git clone undervolt scripts into {{undervolt_dir}}"
+  become: true
+  git:
+    repo: https://github.com/georgewhewell/undervolt.git
+    dest: "{{undervolt_dir}}"
+
+- name: "make sure undervolt script only has root execution"
+  become: true
+  file:
+    path: "{{undervolt_dir}}/undervolt.py"
+    mode: '0750'
+
+- name: symlink undervolt script to a bin directory in PATH
+  become: true
+  file:
+    state: link
+    src: "{{undervolt_dir}}/undervolt.py"
+    dest: "{{undervolt_bin_symlink}}/undervolt"
+
+- name: template a systemd service unit file undervolt.service
+  become: true
+  template:
+    src: undervolt.service.j2
+    dest: /etc/systemd/system/undervolt.service
+  register: undervolt_service_file
+
+- name: enable, start, & reload if changed the undervolt.service
+  become: true
+  systemd:
+    name: undervolt
+    state: started
+    enabled: true
+
+- name: reload undervolt.service daemon if changed
+  become: true
+  systemd:
+    name: undervolt
+    daemon_reload: true
+  when: undervolt_service_file.changed

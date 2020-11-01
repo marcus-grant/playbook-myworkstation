@@ -56,6 +56,13 @@ flatpaks:
   - org.glimpse_editor.Glimpse
   - org.freecadweb.FreeCAD 
 
+### undervolting
+undervolt_dir: /opt/undervolt
+undervolt_bin_symlink: /usr/local/bin
+undervolt_offset_core: -100
+undervolt_offset_cache: -100
+undervolt_offset_gpu: -70
+
 ### ASDF
 asdf_version: master
 asdf_data_dir: "~/.local/share/asdf"

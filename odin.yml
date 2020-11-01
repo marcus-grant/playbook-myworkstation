@@ -10,6 +10,7 @@
   roles:
     # - {role: 'marcus-grant.mydotfiles', tags: 'dotfiles'}
     # - {role: 'keyboard', tags: 'keyboard'}
-    - {role: 'asdf', tags: ['dev', 'asdf']}
+    # - {role: 'asdf', tags: ['dev', 'asdf']}
     # - gnome
     # - fonts
+    - {role: 'undervolt', tags: ['undervolt', 'power', 'hardware']}

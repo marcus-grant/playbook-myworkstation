@@ -13,6 +13,8 @@ In-Progress
   - [ ] deno
   - [ ] postgres
   - [ ] IF problems arise with installs of asdf-node + using yarn, add tasks using this [fix](https://github.com/asdf-vm/asdf-nodejs/issues/42#issuecomment-360884173)
+- [ ] Check up on this problem which happens with undervolt role's systemd module tasks & handlers
+  - <https://github.com/ansible/ansible/issues/71528>
 - [ ] Refactor cli, gui packages to roles, a role for...
   - all these have overrides
   - [ ] common-cli
@@ -20,14 +22,18 @@ In-Progress
   - [ ] extra-cli
   - [ ] extra-gui
   - [ ] flatpacks
-- [ ] Fix security alerts: https://github.com/marcus-grant/playbook-myworkstation/network/alerts
+- [ ] Fix security alerts: <https://github.com/marcus-grant/playbook-myworkstation/network/alerts>
 - [ ] boostsrap.sh to install core utilities, ansible & its deps
 - [ ] fix tag running scripts to not include other roles
 - [ ] Better firefox scrolling using [these][02] settings in `~/.mozilla/firefox/yourprofile/user.js`
 - [ ] Finish fonts role with a remote storage location for all fonts
   - There's a good example of what can be done [here][nvmsh]
 - [ ] ActivityWatch Install, here's [docs][01]
-- [ ] Add default link var for neovim's `coc-settings.json` location added to repo - [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures) - [ ] Keyboard shortcuts tasks for gnome role - [ ] Virtual workspace up/down super + pg up / pg down - [ ] Virtual workspace by number super + 1,2,3...
+- [ ] Add default link var for neovim's `coc-settings.json` location added to repo
+- [ ] Add role/task to install [gnome gestures util](https://gitlab.com/cunidev/gestures)
+- [ ] Keyboard shortcuts tasks for gnome role
+- [ ] Virtual workspace up/down super + pg up / pg down
+- [ ] Virtual workspace by number super + 1,2,3...
 
 Planning
 --------
@@ -42,6 +48,7 @@ Planning
   - [ ] fd
   - [ ] rust
   - [ ] .net core
+- [ ] undervolting using [amdctl][amdundervolt]
 - [ ] NVM role for managing setup of dev environment for node and setting default node to lts
 - [ ] Guake
   - [ ] Install Guake on...
@@ -91,6 +98,7 @@ Future
 Completed
 ---------
 
+- [x] undervolting role with systemd file
 - [x] Add ansible-galaxy install requirements check into local run script
 - [x] Update cli_packages to include xclip, since it's removed from common-packages role
 - [x] Setup play/run/inventory for local system
@@ -107,6 +115,7 @@ Completed
 [nvmsh]: https://github.com/nvm-sh/nvm
 [env-automation-makefile]: https://github.com/alehatsman/env-automation/blob/master/Makefile "Github: alehatsman/env-automation/master/Makefile"
 [env-automation-blogpost]: https://alehatsman.com/posts/dotfiles_and_configuration_management_using_ansible.html "alehatsman blog: automating dotfiles with ansible"
+[amdundervolt]: https://github.com/kevinlekiller/amdctl/issues/18 "Github: kevinlekiller/amdctl"
 
 [01]: https://docs.activitywatch.net/en/latest/getting-started.html "ActivityWatch Docs: Getting Started"
 [02]: https://wiki.archlinux.org/index.php/Firefox#Smooth_Scrolling "Arch Wiki: Firefox - Smooth Scroll"

@@ -1,0 +1,18 @@
+[Unit]
+Description=undervolt
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart={{undervolt_dir}}/undervolt.py -v \
+                                --core {{undervolt_offset_core}} \
+                                --cache {{undervolt_offset_cache}} \
+                                --gpu {{undervolt_offset_gpu}}
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target
