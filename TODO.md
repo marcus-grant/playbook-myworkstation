@@ -4,8 +4,11 @@ To-Do's
 In-Progress
 -----------
 
-- [ ] handler or followup for dotfiles where profile with new env vars are updated
-- [ ] fix tags argument to run only singly tagged playbooks
+- [ ] check up on fonts role and make sure it downloads & installs these nerd fonts
+  - [ ] fura code
+  - [ ] iosevka
+  - [ ] bigblue
+- [ ] guake install & configuration role which includes `ziyenano/guake-color-schemes` project
 - [-] ASDF role with subtasks for installing all dev environments
   - [x] ASDF Tool install
   - [x] node install
@@ -15,6 +18,7 @@ In-Progress
   - [ ] IF problems arise with installs of asdf-node + using yarn, add tasks using this [fix](https://github.com/asdf-vm/asdf-nodejs/issues/42#issuecomment-360884173)
 - [ ] Check up on this problem which happens with undervolt role's systemd module tasks & handlers
   - <https://github.com/ansible/ansible/issues/71528>
+- [ ] fix tags argument to run only singly tagged playbooks
 - [ ] Refactor cli, gui packages to roles, a role for...
   - all these have overrides
   - [ ] common-cli
@@ -34,6 +38,7 @@ In-Progress
 - [ ] Keyboard shortcuts tasks for gnome role
 - [ ] Virtual workspace up/down super + pg up / pg down
 - [ ] Virtual workspace by number super + 1,2,3...
+- [ ] handler or followup for dotfiles where profile with new env vars are updated
 
 Planning
 --------
