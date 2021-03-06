@@ -1,0 +1,83 @@
+---
+downloads: ~/.cache/ansible-downloads/
+
+dotfiles_enabled: true
+dotfiles_local_root_dir: '~/.dots'
+dotfiles_git_server_base_url: 'github.com'
+dotfiles_git_username: 'marcus-grant'
+dotfiles_use_ssh: true
+dotfiles:
+  vim:
+    repo_name: 'dots-vim'
+    local_subdir_name: 'vim'
+    version: 'master'
+    links:
+      - { dest: '~/.vim', src: '~/.dots/vim' }
+      - { dest: '~/.vimrc', src: '~/.dots/vim/vimrc' }
+  neovim:
+    repo_name: 'dots-neovim'
+    local_subdir_name: 'neovim'
+    version: 'master'
+    links:
+      - { dest: '~/.config/nvim', src: '~/.dots/neovim' }
+  tmux:
+    repo_name: 'dots-tmux'
+    local_subdir_name: 'tmux'
+    version: 'master'
+    links:
+      - { dest: '~/.tmux.conf', src: '~/.dots/tmux/.tmux.conf' }
+      - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
+
+homebrew_packages:
+  - autoconf
+  - borgbackup
+  - bpytop
+  - coreutils
+  - doxygen
+  - exa
+  - fd
+  - fzf
+  - gettext
+  - gifsicle
+  - gh
+  - go
+  - gopass
+  - gpg
+  - httpie
+  - iperf
+  - libevent
+  - sqlite
+  - mcrypt
+  - ncdu
+  - node
+  - nvim
+  - nvm
+  - php
+  - ssh-copy-id
+  - cowsay
+  - readline
+  - openssl
+  - pass
+  - pinentry
+  - pinentry-maC
+  - pv
+  - terminal-notifier
+  - tldr
+  - tree
+  - vim
+  - wget
+  - wrk
+  - xstd
+  - xz
+
+homebrew_casks:
+  - balenaetcher
+  - brave-browser
+  - firefox
+  - freecad
+  - gimp
+  - licecap
+  - sequel-pro
+  - postico
+  - vagrant
+  - vorta
