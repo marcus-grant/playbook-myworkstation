@@ -4,6 +4,9 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] Mac Arm64 native docker
+- [ ] Setup `mas` for app store installs in mac based off geerling
+- [ ] Setup zsh dotfiles for mac and have custom defaults for profile based off geerlings dotfiles
 - [ ] check up on fonts role and make sure it downloads & installs these nerd fonts
   - [ ] fura code
   - [ ] iosevka
