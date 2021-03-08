@@ -1,0 +1,10 @@
+---
+- hosts: mac
+  vars_files:
+    # - group_vars/vault.yml
+    - group_vars/mac.yml
+  roles:
+    # - role: geerlingguy.homebrew
+    #   tags: ['homebrew']
+    - role: marcus-grant.mydotfiles
+
