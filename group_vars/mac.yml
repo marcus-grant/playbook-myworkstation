@@ -7,6 +7,13 @@ dotfiles_git_server_base_url: 'github.com'
 dotfiles_git_username: 'marcus-grant'
 dotfiles_use_ssh: true
 dotfiles:
+  zsh:
+    repo_name: 'dots-zsh'
+    local_subdir_name: 'zsh'
+    version: 'master'
+    links:
+      - { dest: '~/.zshrc' src: '~/.dots/zsh/zshrc' }
+      - { dest: '~/.zprofile' src: '~/.dots/zsh/zprofile' }
   vim:
     repo_name: 'dots-vim'
     local_subdir_name: 'vim'
@@ -29,10 +36,12 @@ dotfiles:
       - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
 
 homebrew_packages:
+  - ansible-lint
   - autoconf
   - borgbackup
   - bpytop
   - coreutils
+  - cowsay
   - doxygen
   - exa
   - fd
@@ -46,29 +55,35 @@ homebrew_packages:
   - httpie
   - iperf
   - libevent
-  - sqlite
+  - magic-wormhole
   - mcrypt
   - ncdu
   - node
   - nvim
   - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
   - openssl
   - pass
+  - php
+  - readline
+  - ssh-copy-id
+  - sqlite
   - pinentry
-  - pinentry-maC
+  - pinentry-mac
   - pv
   - terminal-notifier
   - tldr
+  - tmux
   - tree
   - vim
   - wget
   - wrk
   - xstd
   - xz
+  - yamllint
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
 
 homebrew_casks:
   - balenaetcher
