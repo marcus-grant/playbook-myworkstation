@@ -3,3 +3,7 @@ venv
 *vault*
 .vagrant
 *__pycache__*
+# ansible cache
+.cache
+# vim swap
+*.swp
