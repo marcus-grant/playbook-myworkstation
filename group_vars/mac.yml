@@ -12,8 +12,8 @@ dotfiles:
     local_subdir_name: 'zsh'
     version: 'master'
     links:
-      - { dest: '~/.zshrc' src: '~/.dots/zsh/zshrc' }
-      - { dest: '~/.zprofile' src: '~/.dots/zsh/zprofile' }
+      - { dest: '~/.zshrc', src: '~/.dots/zsh/zshrc' }
+      - { dest: '~/.zprofile', src: '~/.dots/zsh/zprofile' }
   vim:
     repo_name: 'dots-vim'
     local_subdir_name: 'vim'
@@ -33,7 +33,6 @@ dotfiles:
     version: 'master'
     links:
       - { dest: '~/.tmux.conf', src: '~/.dots/tmux/.tmux.conf' }
-      - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
 
 homebrew_packages:
   - ansible-lint
