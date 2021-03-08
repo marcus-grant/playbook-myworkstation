@@ -3,3 +3,5 @@ venv
 *vault*
 .vagrant
 *__pycache__*
+# ansible's local playbook cache
+.cache
