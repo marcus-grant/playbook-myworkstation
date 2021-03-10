@@ -7,3 +7,5 @@ venv
 .cache
 # vim swap
 *.swp
+# OS specific
+*.DS_Store
