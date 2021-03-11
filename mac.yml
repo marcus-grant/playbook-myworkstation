@@ -2,9 +2,15 @@
 - hosts: mac
   vars_files:
     # - group_vars/vault.yml
-    - group_vars/mac.yml
+    # - group_vars/mac.yml
   roles:
+    # Note: Until geerling's homebrew role gets fixed for M1 it's unusable
+    # A commit that might be able to track progress is below:
+    # https://github.com/geerlingguy/ansible-role-homebrew/issues/156
     # - role: geerlingguy.homebrew
     #   tags: ['homebrew']
     - role: marcus-grant.mydotfiles
-
+      tags: ['dotfiles', 'dots']
+  tasks:
+    - include_tasks: tasks/gpg.yml
+      tags: ['gpg']

@@ -1,6 +1,8 @@
 ---
 downloads: ~/.cache/ansible-downloads/
 
+gpg_agent_cache_timeout: 1000
+
 dotfiles_enabled: true
 dotfiles_local_root_dir: '~/.dots'
 dotfiles_git_server_base_url: 'github.com'

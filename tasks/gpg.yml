@@ -1,0 +1,22 @@
+---
+- name: Install GPG tools using homebrew
+  community.general.homebrew:
+    name: '{{ item }}'
+    state: present
+  loop:
+    - gpg
+    - pinentry
+    - pinentry-mac
+  when: ansible_facts['os_family'] == "Darwin"
+
+- name: Configure gpg-agent.conf
+  ansible.builtin.lineinfile:
+    path: '{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf'
+    regexp: '{{ item.regex }}'
+    line: '{{ item.line }}'
+  loop:
+    - regex: '^pinentry-program'
+      line: 'pinentry-program /usr/local/bin/pinentry-mac'
+    - regex: '^default-cache-ttl'
+      line: 'default-cache-ttl {{ gpg_agent_cache_timeout }}'
+  when: ansible_facts['os_family'] == "Darwin"
