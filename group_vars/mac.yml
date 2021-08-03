@@ -14,8 +14,9 @@ dotfiles:
     local_subdir_name: 'zsh'
     version: 'master'
     links:
-      - { dest: '~/.zshrc', src: '~/.dots/zsh/zshrc' }
-      - { dest: '~/.zprofile', src: '~/.dots/zsh/zprofile' }
+      - { dest: '~/.zshrc', src: '~/.dots/zsh/rc.zsh' }
+      - { dest: '~/.zprofile', src: '~/.dots/zsh/profile.zsh' }
+      - { dest: '~/.zshenv', src: '~/.dots/zsh/env.zsh' }
   vim:
     repo_name: 'dots-vim'
     local_subdir_name: 'vim'
