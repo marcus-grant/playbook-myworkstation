@@ -1,0 +1,65 @@
+---
+- hosts: thor
+  gather_facts: yes
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
+      tags: ['pre', 'apt', 'update']
+    - name: 'Ensure bulk packages installed first, from "installed_packages var"'
+      apt:
+        name: '{{ item }}'
+        state: present
+      loop: '{{ installed_packages }}'
+      tags: ['init','pre','apt','packages']
+  roles:
+    # - {role: 'marcus-grant.mydotfiles', tags: 'dotfiles'}
+    # - {role: 'keyboard', tags: 'keyboard'}
+    # - {role: 'asdf', tags: ['dev', 'asdf']}
+    # - gnome
+    # - fonts
+    # - {role: 'undervolt', tags: ['undervolt', 'power', 'hardware']}
+
+# ---
+# - hosts: vor
+#   gather_facts: true
+#   become: true
+#   # vars_files:
+#   #   - group_vars/vault.yml
+#   handlers:
+#     - import_tasks: handlers.yml
+#   pre_tasks:
+#     - name: Update apt cache
+#       apt:
+#         update_cache: true
+#         cache_valid_time: 600
+#       when: ansible_os_family == 'Debian'
+#       tags: ['pre','apt','update']
+#     - name: Install some packages
+#       apt:
+#         name: '{{ item }}'
+#         state: present
+#       loop: '{{ installed_packages }}'
+#       tags: ['init','pre','apt']
+
+  #   - name: Install some pip packages
+  #     pip:
+  #       name: '{{ item }}'
+  #     loop:
+  #       - stormssh
+  #     tags: ['init', 'pre', 'pip']
+  # roles:
+  #   - role: marcus-grant.mydotfiles
+  #     tags: ['dots', 'dotfiles']
+  #   - role: geerlingguy.ntp
+  #     tags: ['ntp']
+  #   - role: hetzner-box
+  #     tags: ['box', 'hbox', 'storage', 'hetzner']
+  #   - role: geerlingguy.mysql
+  #     tags: ['mysql']
+  #   - role: geerlingguy.docker
+  #     tags: ['docker']
+  #   - role: docker-server-traefik-proxy
+  #     tags: ['docker', 'container', 'docker_containers', 'proxy', 'traefik', 'git', 'gitea']
