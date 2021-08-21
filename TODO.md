@@ -4,6 +4,25 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] gnome-terminal color schemes
+  - include
+    - gruvbox
+    - papergcolor
+    - ayu
+  - use dconf to set the values
+  - follow [this](https://unix.stackexchange.com/questions/133914/set-gnome-terminal-background-text-color-from-bash-script)
+- [ ] ZSH install role
+- [ ] Nerd fonts installation role
+  - fira-code
+  - fira-mono
+  - bigblue
+  - iosevka
+  - Sauce Code
+  - inconsolata
+- [ ] Update gnome role to customize
+  - [ ] keyboards
+  - [ ] extensions
+  - [ ] color themes
 - [ ] Mac Arm64 native docker
 - [ ] Setup `mas` for app store installs in mac based off geerling
 - [ ] Setup zsh dotfiles for mac and have custom defaults for profile based off geerlings dotfiles

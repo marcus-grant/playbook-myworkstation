@@ -67,15 +67,14 @@ dotfiles:
   bash:
     repo_name: 'dots-bash'
     local_subdir_name: 'bash'
-    version: 'master'
+    version: 'main'
     links:
-      - { dest: '~/.bashrc', src: '~/.dots/bash/bashrc' }
-      - { dest: '~/.profile', src: '~/.dots/bash/profile' }
-      - { dest: '~/.bash_profile', src: '~/.dots/bash/bash_profile' }
+      - { dest: '~/.bashrc', src: '~/.dots/bash/rc.bash' }
+      - { dest: '~/.bash_profile', src: '~/.dots/bash/profile.bash' }
   vim:
     repo_name: 'dots-vim'
     local_subdir_name: 'vim'
-    version: 'master'
+    version: 'main'
     links:
       - { dest: '~/.vim', src: '~/.dots/vim' }
       - { dest: '~/.vimrc', src: '~/.dots/vim/vimrc' }
@@ -88,7 +87,7 @@ dotfiles:
   tmux:
     repo_name: 'dots-tmux'
     local_subdir_name: 'tmux'
-    version: 'master'
+    version: 'main'
     links:
       - { dest: '~/.tmux.conf', src: '~/.dots/tmux/.tmux.conf' }
       - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
