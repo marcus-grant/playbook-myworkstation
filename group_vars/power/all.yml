@@ -1,0 +1,106 @@
+---
+### keyboard dconf mapping options
+keyboard_dconf_xkb_remaps_enable: true
+keyboard_dconf_options: "['caps:escape', 'lv3:ralt_switch']"
+  # - "caps:escape"  # caps becomes escape
+  # - "lv3:ralt_switch"  # RALT layer 3 int'l char maps
+
+### packages for cli-packages install task
+installed_packages:
+  # - alacritty  # complications in debian apt sources - works on sid
+  - baobab
+  - bpytop
+  - chromium
+  - cowsay
+  - curl
+  - dconf-cli
+  - dconf-editor
+  - fd-find
+  - ffmpeg
+  - flatpak
+  - fzf
+  - git
+  - guake
+  - htop
+  - iotop
+  - lm-sensors
+  - lolcat
+  - ncdu
+  - neovim
+  - nodejs
+  - npm
+  - openssh-server
+  - openssl
+  - pandoc
+  - python3-psutil
+  - ranger
+  - ripgrep
+  - snapper
+  - tig
+  - timeshift
+  - tmux
+  - tree
+  - unzip
+  - vim
+  - wget
+  - xclip
+  - yarnpkg
+  - zsh
+  
+
+### flatpak installations task
+flatpaks:
+  - org.gtk.Gtk3theme.Pop-dark
+  - org.mozilla.firefox
+  - org.mozilla.Thunderbird
+  - com.discordapp.Discord
+  - org.freecadweb.FreeCAD 
+  - org.gimp.GIMP
+  - com.valvesoftware.Steam
+
+### dotfiles
+dotfiles_local_root_dir: '~/.dots'
+dotfiles_git_server_base_url: 'github.com'
+dotfiles_git_username: 'marcus-grant'
+dotfiles_use_ssh: true
+dotfiles:
+  bash:
+    repo_name: 'dots-bash'
+    local_subdir_name: 'bash'
+    version: 'master'
+    links:
+      - { dest: '~/.bashrc', src: '~/.dots/bash/bashrc' }
+      - { dest: '~/.profile', src: '~/.dots/bash/profile' }
+      - { dest: '~/.bash_profile', src: '~/.dots/bash/bash_profile' }
+  vim:
+    repo_name: 'dots-vim'
+    local_subdir_name: 'vim'
+    version: 'master'
+    links:
+      - { dest: '~/.vim', src: '~/.dots/vim' }
+      - { dest: '~/.vimrc', src: '~/.dots/vim/vimrc' }
+  neovim:
+    repo_name: 'dots-neovim'
+    local_subdir_name: 'neovim'
+    version: 'master'
+    links:
+      - { dest: '~/.config/nvim', src: '~/.dots/neovim' }
+  tmux:
+    repo_name: 'dots-tmux'
+    local_subdir_name: 'tmux'
+    version: 'master'
+    links:
+      - { dest: '~/.tmux.conf', src: '~/.dots/tmux/.tmux.conf' }
+      - { dest: '~/.tmux.conf.local', src: '~/.dots/tmux/.tmux.conf.local' }
+  alacritty:
+    repo_name: 'dots-alacritty'
+    local_subdir_name: 'alacritty'
+    version: 'master'
+    links:
+      - { dest: '~/.config/alacritty', src: '~/.dots/alacritty' }
+  i3:
+    repo_name: 'dots-i3'
+    local_subdir_name: 'i3'
+    version: 'master'
+    links:
+      - { dest: '~/.config/i3', src: '~/.dots/i3' }
