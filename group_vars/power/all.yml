@@ -10,7 +10,6 @@ installed_packages:
   # - alacritty  # complications in debian apt sources - works on sid
   - baobab
   - bpytop
-  - chromium
   - cowsay
   - curl
   - dconf-cli

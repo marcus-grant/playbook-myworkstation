@@ -10,12 +10,12 @@
         cache_valid_time: 600
       when: ansible_os_family == 'Debian'
       tags: ['pre', 'apt', 'update']
-    # - name: 'Ensure bulk packages installed first, from "installed_packages var"'
-    #   apt:
-    #     name: '{{ item }}'
-    #     state: present
-    #   loop: '{{ installed_packages }}'
-    #   tags: ['init','pre','apt','packages']
+    - name: 'Ensure bulk packages installed first, from "installed_packages var"'
+      apt:
+        name: '{{ item }}'
+        state: present
+      loop: '{{ installed_packages }}'
+      tags: ['init','pre','apt','packages']
     - name: "Manage flathub repos"
       community.general.flatpak_remote:
         name: "flathub"
@@ -23,11 +23,11 @@
         flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
         method: "system"
       tags: [ pre, flatpak ]
-  # roles:
-    # - name: Import dotfiles role
-    #   import_role:
-    #     name: marcus-grant.mydotfiles
-    #   tags: [ dots, dotfiles ]
+    # roles:
+    - name: Import dotfiles role
+      import_role:
+        name: marcus-grant.mydotfiles
+      tags: [ dots, dotfiles ]
     # - role: marcus-grant.mydotfiles
     #   tags: [ dots, dotfiles ]
     # - name: Include dotfiles role
@@ -49,8 +49,8 @@
 
 - hosts: power
   gather_facts: true
-  # roles:
-  #   - {role: 'marcus-grant.mydotfiles', tags: ['dotfiles','dots']}
+  roles:
+    - {role: 'marcus-grant.mydotfiles', tags: ['dotfiles','dots']}
   post_tasks:
     - name: "Manage flathub repos (user)"
       community.general.flatpak_remote:
@@ -69,6 +69,8 @@
     - name: Check if Steam flatpak has already added steam_library_path (host_var only)
       shell: 'flatpak info --show-permissions com.valvesoftware.Steam | grep "{{steam_library_path}}"'
       register: flatpak_steam
+      failed_when: false
+      changed_when: false
     - debug:
         msg: '{{flatpak_steam}}'
     - name: Permit Steam flatpak to use steam games directory
