@@ -16,13 +16,12 @@
     #     state: present
     #   loop: '{{ installed_packages }}'
     #   tags: ['init','pre','apt','packages']
-    - name: "Manage flathub Repository"
+    - name: "Manage flathub repos"
       community.general.flatpak_remote:
         name: "flathub"
         state: "present"
         flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
         method: "system"
-      become: true
       tags: [ pre, flatpak ]
   # roles:
     # - name: Import dotfiles role
@@ -53,25 +52,27 @@
   # roles:
   #   - {role: 'marcus-grant.mydotfiles', tags: ['dotfiles','dots']}
   post_tasks:
-    # - name: Install flatpaks
-    #   community.general.flatpak:
-    #     name: '{{ item }}'
-    #     state: present
-    #   loop: '{{ flatpaks }}'
-    #   tags: ['flatpak']
-    - name: Check if Steam flatpak has already added steam_library_path
+    - name: "Manage flathub repos (user)"
+      community.general.flatpak_remote:
+        name: "flathub"
+        state: "present"
+        flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
+        method: "user"
+      tags: [ pre, flatpak ]
+    - name: Install flatpaks
+      community.general.flatpak:
+        name: '{{ item }}'
+        state: present
+        method: user
+      loop: '{{ flatpaks }}'
+      tags: ['flatpak']
+    - name: Check if Steam flatpak has already added steam_library_path (host_var only)
       shell: 'flatpak info --show-permissions com.valvesoftware.Steam | grep "{{steam_library_path}}"'
       register: flatpak_steam
     - debug:
         msg: '{{flatpak_steam}}'
     - name: Permit Steam flatpak to use steam games directory
-      shell:
-        argv:
-          - flatpak
-          - override
-          - '--user'
-          - '--filesystem={{ steam_library_path }}'
-          - 'com.valvesoftware.Steam'
+      shell: 'flatpak override --user --filesystem={{ steam_library_path }} com.valvesoftware.Steam'
       when: "'com.valvesoftware.Steam' in flatpaks and flatpak_steam.rc != 0"
 
 

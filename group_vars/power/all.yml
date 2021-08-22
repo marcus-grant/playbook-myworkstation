@@ -50,13 +50,14 @@ installed_packages:
 
 ### flatpak installations task
 flatpaks:
-  - org.gtk.Gtk3theme.Pop-dark
+  # - org.gtk.Gtk3theme.Pop-dark
   - org.mozilla.firefox
   - org.mozilla.Thunderbird
   - com.discordapp.Discord
   - org.freecadweb.FreeCAD 
   - org.gimp.GIMP
   - com.valvesoftware.Steam
+  - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
 ### dotfiles
 dotfiles_local_root_dir: '~/.dots'
