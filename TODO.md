@@ -4,6 +4,7 @@ To-Do's
 In-Progress
 -----------
 
+- [ ] ZSH install role
 - [ ] gnome-terminal color schemes
   - include
     - gruvbox
@@ -11,7 +12,11 @@ In-Progress
     - ayu
   - use dconf to set the values
   - follow [this](https://unix.stackexchange.com/questions/133914/set-gnome-terminal-background-text-color-from-bash-script)
-- [ ] ZSH install role
+- [ ] A [Weylus](https://github.com/H-M-H/Weylus) role to install & configure w/ vars
+- [ ] A PPA based installer role
+  - var to install `gh` *GitHub* client, detailed [here](https://github.com/cli/cli/blob/trunk/docs/install_linux.md)
+  - spotify TUI [link](https://github.com/Rigellute/spotify-tui#manual)
+  - KDiskMark: [link](https://github.com/JonMagon/KDiskMark)
 - [ ] Nerd fonts installation role
   - fira-code
   - fira-mono

@@ -9,6 +9,8 @@ keyboard_dconf_options: "['caps:escape', 'lv3:ralt_switch']"
 installed_packages:
   # - alacritty  # complications in debian apt sources - works on sid
   - baobab
+  - borgmatic
+  - borgbackup
   - bpytop
   - cowsay
   - curl
@@ -20,9 +22,16 @@ installed_packages:
   - fzf
   - git
   - guake
+  - gnome-tweaks
+  - gparted
   - htop
   - iotop
+  - libvirt-daemon  # TODO Move these to a virtualization role
+  - libvirt-daemon-driver-lxc
+  - libvirt-daemon-driver-qemu
+  - libvirt-daemon-driver-vbox
   - lm-sensors
+  - lutris
   - lolcat
   - ncdu
   - neovim
@@ -41,6 +50,7 @@ installed_packages:
   - tree
   - unzip
   - vim
+  - weechat
   - wget
   - xclip
   - yarnpkg
@@ -49,14 +59,35 @@ installed_packages:
 
 ### flatpak installations task
 flatpaks:
-  # - org.gtk.Gtk3theme.Pop-dark
-  - org.mozilla.firefox
-  - org.mozilla.Thunderbird
+  - com.belmoussaoui.Authenticator
+  - com.borgbase.Vorta
   - com.discordapp.Discord
-  - org.freecadweb.FreeCAD 
-  - org.gimp.GIMP
+  - com.github.alainm23.planner
+  - com.github.Eloston.UngoogledChromium
+  - com.github.muriloventuroso.easyssh
+  - com.github.qarmin.czkawka
+  - com.github.tchx84.Flatseal
+  - com.microsoft.Teams
+  - com.rafaelmardojai.Blanket
+  - com.spotify.Client
+  - com.todoist.Todoist
   - com.valvesoftware.Steam
   - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+  - com.visualstudio.code
+  - io.github.antimicrox.antimicrox
+  - im.pidgin.Pidgin
+  - im.riot.Riot
+  - org.freecadweb.FreeCAD 
+  - org.gimp.GIMP
+  - org.gnome.Boxes
+  - org.gnome.Epiphany
+  - org.gnome.Evolution
+  - org.gtk.Gtk3theme.Pop-dark
+  - org.inkscape.Inkscape
+  - org.libreoffice.LibreOffice
+  - org.mozilla.firefox
+  - org.mozilla.Thunderbird
+  - org.openscad.OpenSCAD
 
 ### dotfiles
 dotfiles_local_root_dir: '~/.dots'
