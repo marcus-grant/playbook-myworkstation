@@ -4,7 +4,6 @@ To-Do's
 In-Progress
 -----------
 
-* [ ] ZSH install role
 * [ ] Borgbackup role that uses borgmatic to setup automatic timed backups to freyja
   * should include root
   * should exclude `/dev`, `/mnt`, `/home`, `/proc`, `/run`, `/media`,  and other typical kernel only directories
@@ -30,6 +29,7 @@ In-Progress
   * inconsolata
 * [ ] Get tag filtering working because running full plays or commenting out is a burden for play dev workflow
 * [ ] Update gnome-terminal role to use nerd fonts after nerd font install role works
+* [ ] Add variable to zsh role to set it to toggle if it should be default
 * [ ] Consider replacing pulseaudio with pipewire
   * Good [guide](https://www.reddit.com/r/pop_os/comments/ofdalv/replaced_pulseaudio_with_pipewire_on_popos_2104_i/) from user on reddit
 * [ ] Update gnome role to customize
@@ -139,6 +139,7 @@ Future
 Completed
 ---------
 
+* [x] ZSH install role
 * [x] undervolting role with systemd file
 * [x] Add ansible-galaxy install requirements check into local run script
 * [x] Update cli_packages to include xclip, since it's removed from common-packages role
