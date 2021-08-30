@@ -2,55 +2,39 @@
 - hosts: power
   gather_facts: true
   become: true
-  # pre_tasks:
-  tasks:
+  pre_tasks:
+  # tasks:
     - name: Update apt cache
       apt:
         update_cache: true
         cache_valid_time: 600
       when: ansible_os_family == 'Debian'
-      tags: ['pre', 'apt', 'update']
     - name: 'Ensure bulk packages installed first, from "installed_packages var"'
       apt:
         name: '{{ item }}'
         state: present
       loop: '{{ installed_packages }}'
-      tags: ['init','pre','apt','packages']
     - name: "Manage flathub repos"
       community.general.flatpak_remote:
         name: "flathub"
         state: "present"
         flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
         method: "system"
-      tags: [ pre, flatpak ]
-    # roles:
-    - name: Import dotfiles role
-      import_role:
-        name: marcus-grant.mydotfiles
-      tags: [ dots, dotfiles ]
-    # - role: marcus-grant.mydotfiles
-    #   tags: [ dots, dotfiles ]
-    # - name: Include dotfiles role
-    #   include_role:
-    #     name: marcus-grant.mydotfiles
-    #     apply:
-    #       tags: [ dots, dotfiles ]
+  roles:
+    - marcus-grant.mydotfiles
 
-    # TODO: Starship role to install starship prompt
-    # roles:
-    #   - {role: 'marcus-grant.mydotfiles', apply: {tags: ['dotfiles','dots']}}
-
-    # - {role: 'keyboard', tags: 'keyboard'}
-    # - {role: 'asdf', tags: ['dev', 'asdf']}
+    # - keyboard
+    # - asdf
     # - gnome
     # - fonts
-    # - {role: 'undervolt', tags: ['undervolt', 'power', 'hardware']}
+    # - undervolt
 
 
 - hosts: power
   gather_facts: true
   roles:
-    - {role: 'marcus-grant.mydotfiles', tags: ['dotfiles','dots']}
+    - marcus-grant.mydotfiles
+    - zsh
   post_tasks:
     - name: "Manage flathub repos (user)"
       community.general.flatpak_remote:
@@ -58,14 +42,12 @@
         state: "present"
         flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
         method: "user"
-      tags: [ pre, flatpak ]
     - name: Install flatpaks
       community.general.flatpak:
         name: '{{ item }}'
         state: present
         method: user
       loop: '{{ flatpaks }}'
-      tags: ['flatpak']
     - name: Check if Steam flatpak has already added steam_library_path (host_var only)
       shell: 'flatpak info --show-permissions com.valvesoftware.Steam | grep "{{steam_library_path}}"'
       register: flatpak_steam
@@ -76,46 +58,3 @@
     - name: Permit Steam flatpak to use steam games directory
       shell: 'flatpak override --user --filesystem={{ steam_library_path }} com.valvesoftware.Steam'
       when: "'com.valvesoftware.Steam' in flatpaks and flatpak_steam.rc != 0"
-
-
-# ---
-# - hosts: vor
-#   gather_facts: true
-#   become: true
-#   # vars_files:
-#   #   - group_vars/vault.yml
-#   handlers:
-#     - import_tasks: handlers.yml
-#   pre_tasks:
-#     - name: Update apt cache
-#       apt:
-#         update_cache: true
-#         cache_valid_time: 600
-#       when: ansible_os_family == 'Debian'
-#       tags: ['pre','apt','update']
-#     - name: Install some packages
-#       apt:
-#         name: '{{ item }}'
-#         state: present
-#       loop: '{{ installed_packages }}'
-#       tags: ['init','pre','apt']
-
-  #   - name: Install some pip packages
-  #     pip:
-  #       name: '{{ item }}'
-  #     loop:
-  #       - stormssh
-  #     tags: ['init', 'pre', 'pip']
-  # roles:
-  #   - role: marcus-grant.mydotfiles
-  #     tags: ['dots', 'dotfiles']
-  #   - role: geerlingguy.ntp
-  #     tags: ['ntp']
-  #   - role: hetzner-box
-  #     tags: ['box', 'hbox', 'storage', 'hetzner']
-  #   - role: geerlingguy.mysql
-  #     tags: ['mysql']
-  #   - role: geerlingguy.docker
-  #     tags: ['docker']
-  #   - role: docker-server-traefik-proxy
-  #     tags: ['docker', 'container', 'docker_containers', 'proxy', 'traefik', 'git', 'gitea']

@@ -1,0 +1,15 @@
+---
+- debug:
+    msg: '{{ ansible_user }}'
+
+- name: Ensure ZSH is installed
+  package:
+    name: zsh
+    state: present
+
+- name: 'Ensure ansible_user {{ansible_user}} has zsh set as default shell'
+  become: true
+  user:
+    name: '{{ ansible_user }}'
+    shell: /usr/bin/zsh
+  when: ansible_os_family == 'Debian'

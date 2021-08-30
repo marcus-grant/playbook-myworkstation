@@ -1,13 +1,29 @@
 ---
-- hosts: all
-  gather_facts: yes
+# Run this play with ansible-playbook dev.yml -i inventory.yml
+# BEFORE COMITING move this code to the real playbook
+- hosts: power  # Change this to group/host as needed for workflow
+  gather_facts: true  # Probably want this for workflow
+  # (Un)comment this as needed
+  become: true
+  # (Un)comment depending on use of pre_tasks in real playbook
   pre_tasks:
-    # - import_tasks: tasks/cli-packages.yml
-    # - import_tasks: tasks/gui-packages.yml
-  # roles:
-  #   - marcus-grant.bootstrap-ansible-arch
-  #   - { name: roles/my-common-packages, become: yes }
-  #   - marcus-grant.mydotfiles
-  #   - marcus-grant.common-packages
-  #   - fonts
-  #   - gnome
+  # (Un)comment depending on use of tasks in real playbook
+  # tasks:
+    - name: Update apt cache
+      become: true
+      apt:
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
+  roles:
+    - { role: zsh, zsh_user: '{{ ansible_user }}'}
+
+# Useful snippets to that might be useful
+  # pre_tasks:
+  #   - name: Update apt cache
+  #     become: true
+  #     apt:
+  #       update_cache: true
+  #       cache_valid_time: 600
+  #     when: ansible_os_family == 'Debian'
+

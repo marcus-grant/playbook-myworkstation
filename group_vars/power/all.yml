@@ -12,6 +12,7 @@ installed_packages:
   - borgmatic
   - borgbackup
   - bpytop
+  - cockpit  # TODO Consider moving to cockpit role
   - cowsay
   - curl
   - dconf-cli
@@ -43,11 +44,12 @@ installed_packages:
   - python3-psutil
   - ranger
   - ripgrep
-  - snapper
   - tig
   - timeshift
   - tmux
   - tree
+  - udisks2  # TODO Consider moving to cockpit role
+  - udisks2-lvm2  # TODO Consider moving to cockpit role
   - unzip
   - vim
   - weechat
@@ -95,6 +97,14 @@ dotfiles_git_server_base_url: 'github.com'
 dotfiles_git_username: 'marcus-grant'
 dotfiles_use_ssh: true
 dotfiles:
+  zsh:
+    repo_name: 'dots-zsh'
+    local_subdir_name: 'zsh'
+    version: 'main'
+    links:
+      - { dest: '~/.zshrc', src: '~/.dots/zsh/rc.zsh' }
+      - { dest: '~/.zprofile', src: '~/.dots/zsh/profile.zsh' }
+      - { dest: '~/.zshenv', src: '~/.dots/zsh/env.zsh' }
   bash:
     repo_name: 'dots-bash'
     local_subdir_name: 'bash'
