@@ -1,13 +1,26 @@
 ---
+# TODO: These arch settings need to be moved to a group
 # This variables file will include all available role variables.
 # It makes it easier to know what's available to change.
 # arch bootstrap variables
-arch_bootstrap_upgrade_pkgs: false
-arch__bootstrap_install_ansible_aur_mod: true
-arch_bootstrap_aur_mod_vers: v0.23
-aur_use_helper: true
-aur_helper: yay
+# arch_bootstrap_upgrade_pkgs: false
+# arch__bootstrap_install_ansible_aur_mod: true
+# arch_bootstrap_aur_mod_vers: v0.23
+# aur_use_helper: true
+# aur_helper: yay
 
+
+# Dotfiles (general)
+dotfiles_base_repo: https://github.com/marcus-grant
+dotfiles_base_dest: ~/.config
+# Bash
+dotfiles_bash_repo: "{{ dotfiles_base_repo }}/dots-bash"
+dotfiles_bash_dest: "{{ dotfiles_base_dest }}/bash"
+dotfiles_bash_bashrc: "{{ dotfiles_bash_dest }}/rc.bash"
+dotfiles_bash_profile: "{{ dotfiles_bash_dest }}/profile.bash"
+
+
+# DELETEME - once my dotfiles collection has all of these remove them
 # defaults file for mydotfiles
 # dotfiles root directory, where all seperate dotfiles subdirectories go
 dotfiles_local_root_dir: '~/.dots'
@@ -15,14 +28,6 @@ dotfiles_git_server_base_url: 'github.com'
 dotfiles_git_username: 'marcus-grant'
 dotfiles_use_ssh: true
 dotfiles:
-  bash:
-    repo_name: 'dots-bash'
-    local_subdir_name: 'bash'
-    version: 'master'
-    links:
-      - { dest: '~/.bashrc', src: '~/.dots/bash/bashrc' }
-      - { dest: '~/.profile', src: '~/.dots/bash/profile' }
-      - { dest: '~/.bash_profile', src: '~/.dots/bash/bash_profile' }
   vim:
     repo_name: 'dots-vim'
     local_subdir_name: 'vim'
