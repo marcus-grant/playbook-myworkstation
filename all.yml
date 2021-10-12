@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - role: marcus_grant.dotfiles.bash
+      tags: [dotfiles,dots,bash]
+
+# For the ssh user
+- hosts: all
+  roles:
+    - role: marcus_grant.dotfiles.bash
+      tags: [dotfiles,dots,bash]
